@@ -1,7 +1,7 @@
 ---
 layout: essay
 type: essay
-title: JavaScript Feels Like Cheating
+title: JavaScript - Cure for the Common Code
 # All dates must be YYYY-MM-DD format!
 date: 2022-01-18
 labels:
