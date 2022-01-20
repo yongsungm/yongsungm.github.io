@@ -1,7 +1,7 @@
 ---
 layout: essay
 type: essay
-title: JavaScript\: For the People
+title: JavaScript For the People
 # All dates must be YYYY-MM-DD format!
 date: 2022-01-18
 labels:
