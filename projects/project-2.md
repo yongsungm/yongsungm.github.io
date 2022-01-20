@@ -3,7 +3,7 @@ layout: project
 type: project
 image: images/database-square.jpg
 title: Database Program
-permalink: projects/vacay
+permalink: projects/database
 # All dates must be YYYY-MM-DD format!
 date: 2021-10-21
 labels:
