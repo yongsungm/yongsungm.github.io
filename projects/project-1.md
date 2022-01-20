@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: images/cube.png
+image: images/cube.jpg
 title: Rubik's Cube Animation
 permalink: projects/micromouse
 # All dates must be YYYY-MM-DD format!
