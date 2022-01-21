@@ -18,5 +18,6 @@ This is an individual project I completed in ICS 212, Winter 2021. Doing this pr
 The user interface was designed to be robust using error handling for all cases of user input.
 It accepts user input, stores it in an object on a linked list, and then writes the data to a file upon program termination, which is then read and stored onto the linked list at the next startup.
 Another feature of this project is the implementation of a debug mode which can be run by passing a specific argument upon starting the application.
+
 Source: <a href="https://onlinegdb.com/HNRvy2Pma">yongsungm/database-program</a>
 
