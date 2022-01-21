@@ -7,7 +7,8 @@ permalink: projects/database
 # All dates must be YYYY-MM-DD format!
 date: 2021-10-21
 labels:
-  - C
+  - Software
+  - C language
   - Database
   - Console
 summary: A simple database program with read/write capabilities and a console UI
