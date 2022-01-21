@@ -53,3 +53,5 @@ I had a friend join me in Indiana and accompany me for a few days, and that was 
 easily the highlight of the trip. I believe most experiences, especially adventures,<br>
 are much better when shared with a friend.
 <br>
+<br>
+<br>
