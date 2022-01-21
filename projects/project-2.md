@@ -20,7 +20,8 @@ The user interface was designed to be robust using error handling for all cases 
 It accepts user input, stores it in an object on a linked list, and then writes the data to a file upon program termination, which is then read and stored onto the linked list at the next startup.
 Another feature of this project is the implementation of a debug mode which can be run by passing a specific command line argument when starting the application.
 
-Source: <a href="https://onlinegdb.com/HNRvy2Pma">yongsungm/database-program</a>
+<pre>Source: <a href="https://github.com/yongsungm/Banking-Database"><i class="large github icon"></i>yongsungm/database-program</a><br>
+        <a href="https://onlinegdb.com/HNRvy2Pma">Online compiler</a></pre>
 <br>
 <br>
 
