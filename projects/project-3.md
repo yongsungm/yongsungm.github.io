@@ -7,6 +7,7 @@ permalink: projects/midwest-bicycle-tour
 # All dates must be YYYY-MM-DD format!
 date: 2015-10-19
 labels:
+  - Bicycling
   - Outdoors
   - Backpacking
 summary: A long distance bicycle tour across the Midwest
