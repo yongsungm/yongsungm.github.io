@@ -10,7 +10,7 @@ labels:
   - Software
   - C language
   - Database
-  - Console
+
 summary: A simple database program with read/write capabilities and a console UI
 ---
 <img class="ui image" src="{{ site.baseurl }}/images/database-screenshot.png">
