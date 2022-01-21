@@ -8,7 +8,7 @@ labels:
   - Software Engineering
   - Learning
 ---
-<img class="ui image" src="{{ site.baseurl }}/images/cube2.jpg">
+
 Algorithms. I first gained an appreciation for this word when I was 12 years old and learned how to solve a rubik’s cube through youtube videos.
 I didn’t know it applied to other things as well at the time, but when I took my first programming class in high school, I drew the connection 
 and recognized programming as something I already loved. Coding to me is like solving a puzzle, and there’s nothing more satisfying than solving
