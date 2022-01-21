@@ -14,7 +14,7 @@ I didn’t know it applied to other things as well at the time, but when I took 
 and recognized programming as something I already loved. Coding to me is like solving a puzzle, and there’s nothing more satisfying than solving
 it once and then seeing that solution work over and over again. To build on that, there are always ways to improve the solution by making it
 quicker or more elegant. I think it’s beautiful the way that there are seemingly infinite ways to solve the same puzzle. While some ways are
-objectively better than others, a lot of solutions are relatively equivalent but still display the different ways which peoples’ minds work.
+objectively better than others, a lot of solutions are relatively equivalent but manage to display the different ways in which peoples’ minds work.
 
 Software engineering has always been my primary academic interest and it is the only thing I’ve studied where I ended up spending more time on
 the topic than required and would pursue well into my free time. While my experience with the topic first started in high school, I didn’t pursue 
