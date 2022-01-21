@@ -18,7 +18,7 @@ objectively better than others, a lot of solutions are relatively equivalent but
 
 Software engineering has always been my primary academic interest and it is the only thing I’ve studied where I ended up spending more time on
 the topic than required and would pursue well into my free time. While my experience with the topic first started in high school, I didn’t pursue 
-academia immediately after graduating in lieu other pursuits such as traveling abroad and joining the Marine Corps. I’m mostly interested in 
+academia immediately after graduating in lieu of other pursuits such as traveling abroad and joining the Marine Corps. I’m mostly interested in 
 software and data structures, but I do have a curiosity about robotics and would like to attempt at least one project of this type in the future.
 <br>
 <br>
