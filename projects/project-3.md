@@ -38,8 +38,18 @@ Bicycle multitool - $40<br>
 Sleeping bag - $40<br>
 Sleeping mat - $13<br>
 Misc (spokes, tire patches, personal items etc.) - $50<br>
-Food - $40 a day * 12 days = $480
-<hr>
-Total ~ $1030
+Food - $40 a day * 12 days = $480<br>
+<b>Total ~ $1030</b>
 <br>
+<br>
+The experience was challenging, but very positive overall. I met a lot of people<br>
+along the way and passed through many small towns and types of areas which <br>
+I had previously had very little if any exposure to. Although I was mostly self-reliant,<br>
+I did have to rely on the kindness of strangers several times when I discovered <br>
+that I lacked a tool I needed to repair my bike. Making camp in cornfields and <br>
+random patches of woods was an adventure I still crave to this day. One thing I <br>
+realized however, is that I probably wouldn’t do something like this again by myself.<br>
+I had a friend join me in Indiana and accompany me for a few days, and that was <br>
+easily the highlight of the trip. I believe most experiences, especially adventures,<br>
+are much better when shared with a friend.
 <br>
