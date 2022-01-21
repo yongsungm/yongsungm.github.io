@@ -40,4 +40,5 @@ Sleeping mat - $13<br>
 Misc (spokes, tire patches, personal items etc.) - $50<br>
 Food - $40 a day * 12 days = $480<hr>
 Total ~ $1030
-
+<br>
+<br>
