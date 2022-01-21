@@ -1,61 +1,33 @@
 ---
 layout: project
 type: project
-image: images/cotton-square.png
-title: Cotton
-permalink: projects/cotton
+image: images/bike1.jpg
+title: Midwest Bicycle Tour
+permalink: projects/midwest-bicycle-tour
 # All dates must be YYYY-MM-DD format!
-date: 2014-04-12
+date: 2015-10-19
 labels:
-  - Lisp
-  - GitHub
-summary: A text adventure game I developed for ICS 313.
+  - Outdoors
+  - Backpacking
+summary: A long distance bicycle tour across the Midwest
 ---
 
-<img class="ui image" src="{{ site.baseurl }}/images/cotton-header.png">
+<img class="ui image" src="{{ site.baseurl }}/images/bike2.jpg">
 
-Cotton is a horror-esque text-based adventure game I developed using the functions and macros built from The Wizard's Game in [Conrad Barski's Land of Lisp](http://landoflisp.com/). Slightly more interesting and convoluted! (It is not that scary.)
+I planned and executed a 12 day 876 mile bicycle tour from Columbus, OH to Omaha NE. The goal of the trip was to make the journey without support and for as low of a cost as possible. To accomplish this, I bought a used bicycle and researched everything I would need to know to successfully complete the trip. I joined a bicycle co-op to gather advice and learn what I could from experienced cyclists. Here I learned basic bicycle maintenance such as how to change spokes and patch tires. I also physically trained beforehand by making day trips across the city and by using bicycle machines at the gym. Another preparation I made was to look up bicycle laws of states I would pass through to ensure I would be riding legally throughout the trip.
 
-To give you a flavor of the game, here is an excerpt from one run:
+Below is an estimated breakdown of my expenses for this trip:
 
-<hr>
-
-<pre>
-You open your eyes, and you are greeted by an unfamiliar ceiling.
-Startled, you get to your feet and quickly scan your surroundings. It's
-dark except for the stream of light coming from a crack on the only boarded
-window in the room. You try to peek through the crack, but you cannot see
-anything. You wonder where you are and who could have possibly brought you here.
-
-<--------------------help------------------------>
-Enter quit or one of the following commands -
-Weld light look walk pickup inventory help h ?
-<------------------------------------------------>
-
-look
-The room is a picture of decay with only a faded number identifying it as room-4. The bed you were
- lying on is stained with what looks like dried blood. Could it be your blood? No - it is not. The
- only way out of the room aside from the door to the corridor is a window that is boarded shut. It
- looks like it has been like that for decades. There is a door going west from here. You see a candle
- on the floor. You see a match on the floor.
-
-pickup candle
-- you are now carrying the candle -
-
-pickup match
-- you are now carrying the match -
-
-light match candle
-
-The candle is now lit. It illuminates everything in the room.
-
-walk west
-The corridor is lit with the candle. It is so long that you cannot see to the end. You notice that
- there are words written on the wall. There is a door going east from here. There is a way going north
- from here. There is a door going south from here.
-</pre>
-
-<hr>
-
-Source: <a href="https://github.com/jogarces/ics-313-text-game"><i class="large github icon "></i>jogarces/ics-313-text-game</a>
+Bicycle - $160<br>
+Tent - $130<br>
+Pannier - $60<br>
+Camp stove - $26<br>
+Reflective vest - $12<br>
+Helmet - $20<br>
+Bicycle multitool - $40<br>
+Sleeping bag - $40<br>
+Sleeping mat - $13<br>
+Misc (spokes, tire patches, personal items etc.) - $50<br>
+Food - $40 a day * 12 days = $480<hr>
+Total ~ $1030
 
