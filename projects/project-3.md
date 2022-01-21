@@ -20,7 +20,7 @@ Omaha NE. The goal of the trip was to make the journey without support and<br>
 for as low of a cost as possible. To accomplish this, I bought a used bicycle<br>
 and researched everything I would need to know to successfully complete the <br>
 trip. I joined a bicycle co-op to gather advice and learn what I could from <br>
-experienced cyclists. Here I learned basic bicycle maintenancesuch as how to<br>
+experienced cyclists. Here I learned basic bicycle maintenance such as how to<br>
 change spokes and patch tires. I also physically trained beforehand by making<br>
 day trips across the city and by using bicycle machines at the gym. Another<br>
 preparation I made was to look up bicycle laws of states I would pass through<br>
