@@ -18,7 +18,7 @@ summary: A long distance bicycle tour across the Midwest
 I planned and executed a 12 day 876 mile bicycle tour from Columbus, OH to<br>
 Omaha NE. The goal of the trip was to make the journey without support and<br>
 for as low of a cost as possible. To accomplish this, I bought a used bicycle<br>
-and researched everything I would need to know to successfullycomplete the <br>
+and researched everything I would need to know to successfully complete the <br>
 trip. I joined a bicycle co-op to gather advice and learn whatI could from <br>
 experienced cyclists. Here I learned basic bicycle maintenancesuch as how to<br>
 change spokes and patch tires. I also physically trained beforehand by making<br>
