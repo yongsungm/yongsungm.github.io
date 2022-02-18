@@ -8,7 +8,6 @@ labels:
   - Software Engineering
   - Learning
 ---
-<h2>Radical Graduation</h2>
 Up to this point in my life, my approach to education was to put just enough effort into my studies to earn mostly A’s. 
 I started this school year taking all of my courses online, and I kept up with this approach, barely hitting deadlines, 
 cramming for tests, and focusing more on pursuing my hobbies than on my education and future career. One reason I am 
