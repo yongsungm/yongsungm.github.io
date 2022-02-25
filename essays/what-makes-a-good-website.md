@@ -12,7 +12,7 @@ labels:
 ---
 
 <h2>Adobe Flash.</h2>
-<p><img class="ui medium right floated rounded image" style="height:300px; float: right;" src="https://picon.ngfiles.com/734000/flash_734404_largest_crop.png?f1562643462" /></p>
+<p><img class="ui medium right floated rounded image" src="https://picon.ngfiles.com/734000/flash_734404_largest_crop.png?f1562643462" /></p>
 <p>
 Adobe ended its development of flash at the end of 2020, resulting in the discontinuation of browser support for all Flash plug-ins. 
 In my early days of browsing the internet circa 2003, I’d spend most of my computer time playing online flash games or watching Flash
