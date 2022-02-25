@@ -32,7 +32,7 @@ and interact with on any device.
 	User interface (UI) frameworks make the task of creating websites that are adaptive to any device (and its resolution) much simpler
   and more accessible to even novice developers. A framework provides a library of pre-developed website components including menus, 
   buttons, formatted containers, and text input fields. While it still takes work to put these components together to make a functional 
-  and aesthetically pleasing website, it takes a lot less work and typically provides better results than having to create and format
+  and aesthetically pleasing website, it takes a lot less work than building from scratch and typically provides better results than having to create and format
   every aspect of a page from scratch. The widgets provided by a UI framework were developed with the concept of “mobile-first design”
   in mind. The basic idea of mobile-first design is that a website will look good and be easy to use on a small screen, and then simply
   adapt to a larger screen if needed. This is an important concept to have in mind since most development probably takes place on a
