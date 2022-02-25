@@ -44,7 +44,7 @@ and interact with on any device.
   </p>
   <h2>Modernization</h2>
   <p>
-	At the time of writing this essay, it seems that just about any small business, charity, or personal project will have a clean, 
+	At the time of writing this essay, it seems that just about any small business, charity, or personal project has a clean, 
   adaptive, responsive, and modern-looking website. The barrier-to-entry for solid web design has seemed to have gone down, but it 
   seems to have been at the cost of creative web design. I recently revisited the website of Gorillaz, who were one of my earliest 
   favorite bands, and as I expected, it is no longer the flash wonderland I remember it to be. Now it’s essentially a cookie-cutter 
