@@ -21,8 +21,7 @@ shared and the entire page would be created with Flash. This allowed for a fully
 might react to the movements of your cursor or the input of your keyboard. It wasn’t all good though. Especially with the hardware
 and bandwidth limitations of the average consumer in the early 2000s, coming across a Flash website could potentially result in an 
 unpleasant experience in which the page was slow to react, would crash your browser, or even possibly freeze your computer. According
-to an <a href="https://www.maketecheasier.com/browsers-ending-flash-support/">article written by Mike Tee</a> which I read during 
-  research for this essay, a couple major reasons Flash support was discontinued
+to an <a href="https://www.maketecheasier.com/browsers-ending-flash-support/">article written by Mike Tee</a>, a couple major reasons Flash support was discontinued
 was due to its security vulnerabilities and its difficulty integrating into mobile platforms. Since such a large portion of internet
 browsing is now conducted through mobile devices, it’s important for website creators to make their pages pleasant to look at 
 and interact with on any device.
