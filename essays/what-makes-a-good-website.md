@@ -11,7 +11,7 @@ labels:
   - Web design
 ---
 
-<h2>Adobe Flash</h2>
+<h2>Adobe Flash.</h2>
 
 <p>
 Adobe ended its development of flash at the end of 2020, resulting in the discontinuation of browser support for all Flash plug-ins. 
