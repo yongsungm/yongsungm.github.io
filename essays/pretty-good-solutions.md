@@ -3,7 +3,7 @@ layout: essay
 type: essay
 title: Pretty Good Solution
 # All dates must be YYYY-MM-DD format!
-date: 2022-01-27
+date: 2022-04-28
 labels:
   - Software Engineering
   - Learning
