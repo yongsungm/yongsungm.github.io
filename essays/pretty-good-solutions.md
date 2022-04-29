@@ -10,7 +10,7 @@ labels:
   - Design Patterns
 ---
 
-One of my favorite aspects of computer science is solving problems, and one of my favorite things about problem solving is that there are countless different ways to solve the same problem. This first became apparent to me when I took a programming class in high school and even simple assignments would sometimes result in drastically different yet correct answers from the students. However, there would be certain solutions to problems which I hated just because they were so different from the way I wanted to approach it. What took me a while to learn is that my intuition doesn't usually lead to the best solution, and also that getting a program to work doesn't necessarily mean that it's a good program.
+One of my favorite aspects of computer science is solving problems, and one of my favorite things about problem solving is that there are countless different ways to solve the same problem. This first became apparent to me when I took a programming class in high school and even simple assignments would sometimes result in drastically different yet correct answers from the students. I found this fascinating, however, there would be certain solutions to problems which I hated just because they were so different from the way I wanted to approach it. What took me a while to learn is that my intuition doesn't usually lead to the best solution, and also that getting a program to work doesn't necessarily mean that it's a good program.
 
 <img class="ui image" src="{{ site.baseurl }}/images/exit-ramp.jpg">
 
