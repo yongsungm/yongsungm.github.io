@@ -18,6 +18,6 @@ Though insertion sort is intuitive, it too is not a particularly efficient sorti
 
 <img class="ui image" src="{{ site.baseurl }}/images/spaghetti.jpg">
 
-If I were to try to create an application such as this without these tools, I'd be extremely hard pressed and would certainly need several more years of education, but I would at least have an idea of what I'd be trying to imitate. Trying to directly code an application such as Warrior Ride Buddies without implementing these design patterns would result in some serious spaghetti code which would have little chance of being editable or debugged if it managed to work at all. Another crucial benefit of using design patterns is that it facilitates cooperation among developers.
+If I were to try to create an application such as this without these tools, I'd be extremely hard pressed and would certainly need several more years of education, but I would at least have an idea of what I'd be trying to imitate. Trying to directly code an application such as Warrior Ride Buddies without implementing these design patterns would certainly result in incomprehensible code which would have little chance of being editable or debugged if it managed to work at all. Another crucial benefit of using design patterns is that it facilitates cooperation among developers.
 
 
