@@ -51,7 +51,8 @@ The final project for this course was easily the most productive and satisfying 
 <br/>
 <br/>
 
+<p>
 The technologies I learned to use in this course built on all of my prerequisite coding experience and allowed me to finally create something that has the potential to see the light of day. I got the pleasure of coding in Javascript, which shocked me by how easy it is to use and by the amount of functionality built into it. I learned how to use the React library to easily create pleasant user interfaces. Though my prior knowledge of databases is lacking, I learned how to use the document-oriented database program MongoDB. Using all of these technologies through the Meteor framework and the integrated development environment IntelliJ IDEA, my group was able to build a web application with more functionality built into than I was confident we could accomplish at the start. Though the final product is incomplete, it is a well-functioning prototype, and I’m confident that we could polish it into a useful tool with actual users if we were to work on it some more.
-
+</p>
 <br>
 <br>
