@@ -21,7 +21,7 @@ This semester has facilitated the largest growth I’ve seen in myself as a soft
 <li>
     ICS-314: Software Engineering I
 </li>
-
+<br/>
 
 While ICS-311 and MAT-307 introduced me to many useful mathematical concepts which were more advanced than anything I’d learned before, I would say that ICS-314 has provided me with the most value in immediate returns. It did so by introducing me to practical and modern software development. Specifically, it demonstrated to me the utility of Github and taught me how to use an entire technology stack with which I can now use to develop modern web applications. Though I was often somewhat disoriented due to the rapid rate at which concepts and technologies being thrown at me, everything we learned came together cohesively in the creation of my final project.
 
