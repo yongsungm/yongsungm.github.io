@@ -37,12 +37,16 @@ The database collections.
 The report function for misuse that gets reviewed by site admins.
 </li>
 <li>
+The pages for viewing messages and reports
+</li>
+<li>
 The form for creating profiles.
 </li>
 <img class="ui image" src="{{ site.baseurl }}/images/group-messaging.png"/>
 
-<pre>Source: <a href="https://github.com/yongsungm/Banking-Database"><i class="large github icon"></i>yongsungm/database-program</a><br>
-        <a href="https://onlinegdb.com/HNRvy2Pma">Online compiler</a></pre>
-<br>
-<br>
+<pre>Source: <a href="https://github.com/warrior-ride-buddies/warrior-ride-buddies/"><i class="large github icon"></i>yongsungm/database-program</a>
+<br/>
+<a href="warrior-ride-buddies.github.io/">Project information page</a></pre>
+<br/>
+<br/>
 

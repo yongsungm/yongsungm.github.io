@@ -32,7 +32,7 @@ The final project for this course was easily the most productive and satisfying 
 
 <div class="row">
     <div class="column" style="flex: 50%; padding-right: 5px">
-        <img class="ui image" src="{{ site.baseurl }}/images/ICS-211-final-project-screenshot.png" style="width:50%; float:left">
+        <img class="ui image" src="{{ site.baseurl }}/images/ICS-212-final-project-screenshot.png" style="width:50%; float:left">
     </div>
     <div class="column" style="flex: 50%; padding-left: 5px">
         <img class="ui image" src="{{ site.baseurl }}/images/ICS-314-final-project-screenshot.png" style="width:50%; float:right">
