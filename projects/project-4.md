@@ -44,8 +44,8 @@ The pages for viewing messages and reports
 <li>
 The form for creating profiles.
 </li>
+<br/>
 <img class="ui image" src="{{ site.baseurl }}/images/group-messaging.png"/>
-<small>Screenshot of a group message</small>
 
 <pre>Source: <a href="https://github.com/warrior-ride-buddies/warrior-ride-buddies/"><i class="large github icon"></i>warrior-ride-buddies</a>
 <br/>
