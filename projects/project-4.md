@@ -49,7 +49,7 @@ The form for creating profiles.
 
 <pre>Source: <a href="https://github.com/warrior-ride-buddies/warrior-ride-buddies/"><i class="large github icon"></i>warrior-ride-buddies</a>
 <br/>
-<a href="warrior-ride-buddies.github.io/">Project information page</a></pre>
+<a href="https://warrior-ride-buddies.github.io/">Project information page</a></pre>
 <br/>
 <br/>
 
