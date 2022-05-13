@@ -44,7 +44,7 @@ The form for creating profiles.
 </li>
 <img class="ui image" src="{{ site.baseurl }}/images/group-messaging.png"/>
 
-<pre>Source: <a href="https://github.com/warrior-ride-buddies/warrior-ride-buddies/"><i class="large github icon"></i>yongsungm/database-program</a>
+<pre>Source: <a href="https://github.com/warrior-ride-buddies/warrior-ride-buddies/"><i class="large github icon"></i>warrior-ride-buddies</a>
 <br/>
 <a href="warrior-ride-buddies.github.io/">Project information page</a></pre>
 <br/>
