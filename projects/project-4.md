@@ -5,7 +5,7 @@ image: /images/WRB-icon.png
 title: Warrior Ride Buddies
 permalink: projects/warrior-ride-buddies
 # All dates must be YYYY-MM-DD format!
-date: 2021-10-21
+date: 2022-05-12
 labels:
   - Meteor
   - React
