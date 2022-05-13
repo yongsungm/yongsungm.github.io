@@ -2,6 +2,7 @@
 layout: essay
 type: essay
 title: Asking the Right Question
+draft: true
 # All dates must be YYYY-MM-DD format!
 date: 2022-01-27
 labels:

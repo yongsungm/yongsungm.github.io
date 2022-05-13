@@ -2,6 +2,7 @@
 layout: essay
 type: essay
 title: There's Already a Pretty Good Solution
+draft: true
 # All dates must be YYYY-MM-DD format!
 date: 2022-04-28
 labels:
