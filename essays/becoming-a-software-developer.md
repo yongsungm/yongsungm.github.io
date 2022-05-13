@@ -46,7 +46,7 @@ The final project for this course was easily the most productive and satisfying 
     </div>
     <div class="column" style="width: 50%; float:right; padding-left: 5px">
         <small>
-        The main page of my final project from ICS-314 this semester.
+        The main page of my final project from my favorite course this semester.
         </small>    
     </div>
 </div>
