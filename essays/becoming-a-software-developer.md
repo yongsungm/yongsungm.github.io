@@ -38,7 +38,7 @@ The final project for this course was easily the most productive and satisfying 
 <div class="row">
     <div class="column" style="width: 50%; float:left; padding-right: 5px">
         <small>
-            A screenshot of the final project from my favorite course last semester.
+            The final project from my favorite course last semester.
         </small>
     </div>
     <div class="column" style="width: 50%; float:right; padding-left: 5px">
@@ -47,7 +47,6 @@ The final project for this course was easily the most productive and satisfying 
         </small>    
     </div>
 </div>
-<br/>
 <br/>
 <br/>
 
