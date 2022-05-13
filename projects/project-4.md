@@ -41,9 +41,6 @@ The pages for viewing messages and reports.
 <li>
 The form for creating profiles.
 </li>
-<li>
-The database collections.
-</li>
 <br/>
 <img class="ui image" src="{{ site.baseurl }}/images/group-messaging.png"/>
 <br/>
