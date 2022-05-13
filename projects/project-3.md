@@ -3,6 +3,7 @@ layout: project
 type: project
 image: images/bike1.jpg
 title: Midwest Bicycle Tour
+draft: true
 permalink: projects/midwest-bicycle-tour
 # All dates must be YYYY-MM-DD format!
 date: 2015-10-19
