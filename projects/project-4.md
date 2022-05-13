@@ -33,9 +33,6 @@ The messaging feature which supports group messaging.
 The markers which populate the map, along with the filtering capability.
 </li>
 <li>
-The database collections.
-</li>
-<li>
 The report function for misuse that gets reviewed by site admins.
 </li>
 <li>
@@ -43,6 +40,9 @@ The pages for viewing messages and reports.
 </li>
 <li>
 The form for creating profiles.
+</li>
+<li>
+The database collections.
 </li>
 <br/>
 <img class="ui image" src="{{ site.baseurl }}/images/group-messaging.png"/>
