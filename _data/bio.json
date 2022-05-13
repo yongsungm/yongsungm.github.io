@@ -54,6 +54,8 @@
         "C#",
         "Java",
         "Javascript",
+        "HTML",
+        "CSS"
       ]
     },
     {
@@ -66,9 +68,7 @@
         "MongoDB",
         "Semantic UI React",
         "TestCafe",
-        "HTML",
-        "CSS",
-        "Google Maps API",
+        "Google Maps API"
       ]
     }
   ],
