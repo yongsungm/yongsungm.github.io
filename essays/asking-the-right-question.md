@@ -3,6 +3,7 @@ layout: essay
 type: essay
 title: Asking the Right Question
 draft: true
+published: false
 # All dates must be YYYY-MM-DD format!
 date: 2022-01-27
 labels:
