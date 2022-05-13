@@ -39,7 +39,7 @@ The database collections.
 The report function for misuse that gets reviewed by site admins.
 </li>
 <li>
-The pages for viewing messages and reports
+The pages for viewing messages and reports.
 </li>
 <li>
 The form for creating profiles.
