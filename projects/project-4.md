@@ -46,7 +46,11 @@ The database collections.
 </li>
 <br/>
 <img class="ui image" src="{{ site.baseurl }}/images/group-messaging.png"/>
-
+<br/>
+<h2>
+Takeaways
+</h2>
+Through the creation of this project, I learned almost everything I know now about web development. Going through tutorials doesn't quite have the same educational value as tackling problems on your own (with the help of stackoverflow). Prior to working on this project, I had only a vague understanding of all the tools and concepts which were introduced to me in the course for which this project was made, however, I now have a much richer understanding as well as confidence in applying them.
 <pre>Source: <a href="https://github.com/warrior-ride-buddies/warrior-ride-buddies/"><i class="large github icon"></i>warrior-ride-buddies</a>
 <br/>
 <a href="https://warrior-ride-buddies.github.io/">Project information page</a></pre>
