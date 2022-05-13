@@ -3,7 +3,7 @@ layout: project
 type: project
 image: /images/WRB-icon.png
 title: Warrior Ride Buddies
-permalink: projects/database
+permalink: projects/warrior-ride-buddies
 # All dates must be YYYY-MM-DD format!
 date: 2021-10-21
 labels:

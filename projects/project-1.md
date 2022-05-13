@@ -3,7 +3,7 @@ layout: project
 type: project
 image: images/cube.jpg
 title: Rubik's Cube Animation
-permalink: projects/micromouse
+permalink: projects/rubiks
 # All dates must be YYYY-MM-DD format!
 date: 2021-01-28
 labels:
