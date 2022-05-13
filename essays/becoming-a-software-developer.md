@@ -36,11 +36,15 @@ The technologies I learned to use in this course built on all of my prerequisite
     </div>
 </div>
 <div class="row">
-    <div class="column" style="flex: 50%; padding-right: 5px">
-        A screenshot of the final project from my favorite course last semester.
+    <div class="column" style="width: 50%; float:left; padding-right: 5px">
+        <p>
+            A screenshot of the final project from my favorite course last semester.
+        </p>
     </div>
-    <div class="column" style="flex: 50%; padding-left: 5px">
+    <div class="column" style="width: 50%; float:right; padding-left: 5px">
+        <p>
         The main page of my final project from this semester.
+        </p>    
     </div>
 </div>
 
