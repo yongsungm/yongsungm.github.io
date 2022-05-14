@@ -23,10 +23,10 @@ This semester has facilitated the largest growth I’ve seen in myself as a soft
 </li>
 <br/>
 
-While ICS-311 and MAT-307 introduced me to many useful mathematical concepts which were more advanced than anything I’d learned before, I would say that ICS-314 has provided me with the most value in immediate returns. It did so by introducing me to practical and modern software development. Specifically, it demonstrated to me the utility of Github and taught me how to use an entire technology stack with which I can now use to develop modern web applications. Though I was often somewhat disoriented due to the rapid rate at which concepts and technologies were being thrown at me, everything we learned came together cohesively during the creation of my final project.
+While ICS-311 and MAT-307 introduced me to many useful mathematical concepts which were more advanced than anything I’d learned before, I would say that ICS-314 has provided me with the most value in terms of immediate returns. It did so by introducing me to practical and modern software development. Specifically, it demonstrated to me the utility of Github and taught me how to use an entire technology stack with which I can now use to develop modern web applications. Though I was often somewhat disoriented due to the rapid rate at which concepts and technologies were being thrown at me, everything we learned came together cohesively during the creation of my final project.
 
 <h2>
-Teamwork
+Project Management
 </h2>
 The final project for this course was easily the most productive and satisfying group project I’ve ever been a part of. One of the major contributing factors to the productivity of this project was the use of Issue Driven Project Management. As the name implies, this style of project management consists of identifying issues to be worked on and using these issues to divide labor among group members and track progress of the overall project. Using this style of project management through a Github repository resulted in a high rate of productivity and smooth collaboration. It was a very effective method for dividing labor and tracking progress, and allowed group members to work at their own pace without doing redundant work or interfering with each other.
 
