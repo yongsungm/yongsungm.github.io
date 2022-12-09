@@ -24,7 +24,7 @@
         "network": "linkedin",
         "username": "yongsungm",
         "url": "http://www.linkedin.com/in/yongsungm/"
-      },
+      }
     ]
   },
   "interests": [
@@ -66,9 +66,8 @@
         "Git/GitHub",
         "Meteor",
         "MongoDB",
-        "Semantic UI React",
-        "TestCafe",
-        "Google Maps API"
+        "Bootstrap React",
+        "TestCafe"
       ]
     }
   ],
@@ -96,18 +95,6 @@
         "Mentor, supervise, and lead both the professional and personal development of Marines",
         "Perform and supervise all required maintenance on ground radio systems equipment"
       ]
-    },
-    {
-      "company": "Chipotle",
-      "position": "Cook",
-      "website": "",
-      "startDate": "2016-02-01",
-      "endDate": "2016-09-15",
-      "summary": "Grill cook and food prep",
-      "highlights": [
-        "Ensure the quality and safety of food during the preparation and cooking processes by following health code regulations",
-        "Maintain a clean and safe work area by properly handling and sanitizing equipment and preparation areas"
-      ]
     }
   ],
   "volunteer": [
@@ -117,11 +104,7 @@
       "position": "Volunteer",
       "startDate": "2020-11-28",
       "endDate": "Present",
-      "summary": "Assist in cleaning areas and caring for the cats",
-      "highlights": [
-        "Powerwashed the driveway",
-        "Cleaned litter boxes"
-      ]
+      "summary": "Assist in cleaning facility and caring for the cats"
     },
     {
       "organization": "",
@@ -131,7 +114,7 @@
       "endDate": "",
       "summary": "",
       "highlights": [
-        "Company Representative, Single Marines and Sailors Program, 2020-2021",
+        "Company Representative, Single Marines and Sailors Program, 2020-2021"
       ]
     }
   ],
