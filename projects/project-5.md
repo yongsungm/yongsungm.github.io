@@ -31,12 +31,12 @@ The purpose of this application is to provide users with a fun way to improve th
 <h2>
 Contributions
 </h2>
-My primary contribution was the forum page through which users can create and comment on posts. Aside from this I contributed by creating the scoring system, the experience and leveling system, and assisting in making components on other pages functional such as the leaderboard.
+My primary contribution was in creating the forum through which users can create and comment on posts. Aside from this I contributed by creating the scoring system, the experience and leveling system, and assisting in making components on other pages functional such as the leaderboard.
 
 <h2>
 Takeaways
 </h2>
-This project was the second web application I've contributed to. There wasn't a lot to learn since the tech-stack was mostly the same as the previous one. One of the key differences in this experience was that most of the development took place within a span of a few days rather than weeks.
+This project was the second web application I've contributed to. There wasn't a lot to learn since the tech-stack was mostly the same as with the previous one. One of the key differences in this experience was that most of the development took place within a span of a few days rather than weeks. Working with a tech stack I was familiar with enabled me to be more productive as well as focus on implementing good coding practices rather than being primarily concerned with getting the app to work.
 <pre>Source: <a href="https://github.com/sus-gawky/sus-gawky//"><i class="large github icon"></i>Sus-Gawky</a>
 <br/>
 <a href="https://sus-gawky.meteorapp.com/">Deployment</a></pre>
