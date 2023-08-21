@@ -42,7 +42,7 @@ The pages for viewing messages and reports.
 The form for creating profiles.
 </li>
 <br/>
-<img class="ui image" src="{{ site.baseurl }}/images/group-messaging.png"/>
+<img class="ui image" src="{{ site.baseurl }}/images/group_message.png"/>
 <br/>
 <h2>
 Takeaways
