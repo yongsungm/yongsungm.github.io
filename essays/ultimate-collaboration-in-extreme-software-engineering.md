@@ -21,10 +21,10 @@ One course I took this semester was Software Engineering 2 (ICS 414). This cours
 <h2>Project Management Strategies</h2>
 
 - Weekly meetings: The code reviews were an invaluable process which ensured everyone within the group was on the same page regarding coding standards. It was also a good time to ask questions, so we could all learn from each other and fill in our individual knowledge gaps in the tech-stack.
-
+<br><br>
 
 - IDPM: The system of creating issues and resolving them on individual branches was an effective way of dividing work amongst a large group and catching any errors that were made. This system allowed for people to contribute to the same project simultaneously with minimal interference with each other. Our team also made use of pull-requests, requiring that all changes were reviewed by another teammate before getting merged into the main branch.
-
+<br><br>
 
 - Testing: I've previously struggled with implementing testing as a part of my projects. This is because it can sometimes feel like as much work as developing, but it doesn't immediately provide tangible results. I've come to better understand how testing is a vital aspect of software development, and needs to be implemented from the beginning of any project.
 
