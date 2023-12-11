@@ -3,7 +3,7 @@ layout: essay
 type: essay
 title: Ultimate Collaboration in Extreme Software Engineering
 # All dates must be YYYY-MM-DD format!
-date: 2023-10-10
+date: 2023-12-10
 labels:
   - Project Management
   - IDPM
