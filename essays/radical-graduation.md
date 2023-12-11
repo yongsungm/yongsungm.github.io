@@ -2,6 +2,8 @@
 layout: essay
 type: essay
 title: Radical Graduation
+draft: true
+published: false
 # All dates must be YYYY-MM-DD format!
 date: 2022-02-17
 labels:
