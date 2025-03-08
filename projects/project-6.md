@@ -31,7 +31,7 @@ Implemented the path finding algorithm
 Incorporated speed profile data and directional limitations of the sailboat
 </li>
 <li>
-Integrated local wind forcast data from NOAA
+Integrated local wind forecast data from NOAA
 </li>
 <li>
 Optimized the land detection algorithm for imported maps
@@ -39,7 +39,7 @@ Optimized the land detection algorithm for imported maps
 <h2>
 Takeaways
 </h2>
-This was my first project in which I developed software for a client. My role inorporated communication, project management, and software development. The minimum viable project agreed upon at the start was completed early and our team continued the project by implementing additional features at the requests of our client.
-<pre>Source: The source code for this project is not owned by me.
+This was my first project in which I developed software for a client. My role incorporated communication, project management, and software development. The minimum viable project agreed upon at the start was completed early and our team continued the project by implementing additional features at the requests of our client.
+<pre>Source: The source code for this project not available to the public
 <br/>
 
