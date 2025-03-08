@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: images/WRB-icon.png
+image: images/larvae-counter/icon.png
 title: Mosquito Larvae Detection
 permalink: projects/mosquito-model-detection
 # All dates must be YYYY-MM-DD format!
@@ -106,13 +106,13 @@ The base model used is “yolov8n” and is trained using the best hyperparamete
 While this model has been highly evaluated for its performance, its ability to generalize is not thoroughly proven due to the minuscule size of the test set. Since all training was conducted using images from the same source and in the same setting, it is likely that the model will not generalize well to photos taken under different conditions, such as those with a different background or lighting. Any variation in these factors could significantly impact the model's ability to accurately detect and classify mosquito larvae.
 </p>
 <br/>
-<img class="ui image" src="{{ site.baseurl }}/images/PR-curve.png"/>
+<img class="ui image" src="{{ site.baseurl }}/images/larvae-counter/PR-curve.png"/>
 <br/>
-<img class="ui image" src="{{ site.baseurl }}/images/PC-curve.png"/>
+<img class="ui image" src="{{ site.baseurl }}/images/larvae-counter/PC-curve.png"/>
 <br/>
-<img class="ui image" src="{{ site.baseurl }}/images/RC-curve.png"/>
+<img class="ui image" src="{{ site.baseurl }}/images/larvae-counter/RC-curve.png"/>
 <br/>
-<img class="ui image" src="{{ site.baseurl }}/images/F1-curve.png"/>
+<img class="ui image" src="{{ site.baseurl }}/images/larvae-counter/F1-curve.png"/>
 <br/>
 <pre>Source: <a href="https://github.com/yongsungm/mosquito_larvae_counter_YOLOv8"><i class="large github icon"></i>mosquito_larvae_counter_YOLOv8</a>
 <br/>
