@@ -27,7 +27,6 @@ summary: An object detection model for identifying and counting mosquito larvae 
         }
     </style>
 </head>
-<body>
 <h2>Purpose:</h2>
 <p>
 Counting mosquito larvae in an aliquot is a tedious task faced by PhD students researching mosquito population control. This paper presents a machine learning approach to this problem, leveraging a minimal dataset of only 96 images. The goal is to develop a model that can accurately detect and count mosquito larvae in images taken in a laboratory environment.
@@ -116,4 +115,3 @@ While this model has been highly evaluated for its performance, its ability to g
 <br/>
 <pre>Source: <a href="https://github.com/yongsungm/mosquito_larvae_counter_YOLOv8"><i class="large github icon"></i>mosquito_larvae_counter_YOLOv8</a>
 <br/>
-</body>
