@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: optimal_sailor_layout
 type: project
 image: images/optimal-sailor/icon.png
 title: Optimal Saior
