@@ -25,21 +25,23 @@ The purpose of this application is to make it easy for students attending the Un
 <h2>
 Contributions
 </h2>
-My contributions were mostly to create and improve functionality of the features we wanted to incorporate. The features I had a large part in implementing include:
 <li>
-The messaging feature which supports group messaging.
+Created a the direct messaging feature which supports group messaging
 </li>
 <li>
-The markers which populate the map, along with the filtering capability.
+Integrated Google Maps and populated the map with markers
 </li>
 <li>
-The report function for misuse that gets reviewed by site admins.
+Created the filtering capability for the map markers
 </li>
 <li>
-The pages for viewing messages and reports.
+Implemented the report function for misuse that gets reviewed by site admins
 </li>
 <li>
-The form for creating profiles.
+Designed and created the pages for viewing messages and reports
+</li>
+<li>
+Created the form for making new user profiles
 </li>
 <br/>
 <img class="ui image" src="{{ site.baseurl }}/images/group_message.png"/>
