@@ -2,7 +2,7 @@
 layout: optimal_sailor_layout
 type: project
 image: images/optimal-sailor/icon.png
-title: Optimal Saior
+title: Optimal Sailor
 permalink: projects/optimal-sailor
 # All dates must be YYYY-MM-DD format!
 date: 2023-12-15
