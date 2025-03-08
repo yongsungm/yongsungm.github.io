@@ -26,7 +26,7 @@ The purpose of this application is to make it easy for students attending the Un
 Contributions
 </h2>
 <li>
-Created a the direct messaging feature which supports group messaging
+Created the direct messaging feature which supports group messaging
 </li>
 <li>
 Integrated Google Maps and populated the map with markers
