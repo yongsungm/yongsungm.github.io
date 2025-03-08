@@ -10,7 +10,7 @@ labels:
   - Machine Learning
   - Transfer learning
   - Object Detection
-  - YOLO
+  - YOLOv8
 
 summary: An object detection model for identifying and counting mosquito larvae and eggs
 ---
