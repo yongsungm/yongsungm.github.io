@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: images/optimal-sailor/icon
+image: images/optimal-sailor/icon.png
 title: Optimal Saior
 permalink: projects/optimal-sailor
 # All dates must be YYYY-MM-DD format!
@@ -17,7 +17,7 @@ labels:
 summary: GUI application for sailboat navigation using weather data
 ---
 
-<img class="ui image" src="{{ site.baseurl }}/images/optimal-sailor/poster"/>
+<img class="ui image" src="{{ site.baseurl }}/images/optimal-sailor/poster.png"/>
 <h2>
 Contributions
 </h2>
