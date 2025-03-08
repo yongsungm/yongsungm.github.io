@@ -29,7 +29,7 @@ Contributions
 Created the direct messaging feature which supports group messaging
 </li>
 <li>
-Integrated Google Maps and populated the map with markers
+Integrated Google Maps and populated the map with users' markers
 </li>
 <li>
 Created the filtering capability for the map markers
