@@ -47,11 +47,21 @@
   "education": [
     {
       "institution": "University of Hawaii, Honolulu, HI",
-      "area": "Computer Science (expected Spring, 2025)",
-      "studyType": "M.S.",
-      "startDate": "2021-09-01",
-      "endDate": "Present",
+      "area": "",
+      "studyType": "Bachelor of Science in Computer Science",
+      "startDate": "2021-09-23",
+      "endDate": "2024-05-11",
       "gpa": "4.0",
+      "courses": [
+      ]
+    },
+    {
+      "institution": "",
+      "area": "",
+      "studyType": "Master of Science in Computer Science",
+      "startDate": "2024-09-26",
+      "endDate": "Present",
+      "gpa": "",
       "courses": [
       ]
     }
@@ -125,7 +135,7 @@
   "awards": [
     {
       "title": "Dean's List",
-      "date": "2021-present",
+      "date": "2021 - Present",
       "awarder": "University of Hawai'i at Manoa",
       "summary": "Undergraduate students are awarded the Dean's List distinction if they: (1) earn a semester grade point average of 3.5 or higher based on 12 credits or more taken for a grade (C/NC courses do not count), and (2) do not receive grades of W, I, F, or NC for that semester."
     },
