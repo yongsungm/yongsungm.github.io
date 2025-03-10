@@ -6,10 +6,10 @@
     "email": "ydmasuda@hawaii.edu",
     "phone": "",
     "website": "https://yongsungm.github.io",
-    "summary": "I am studying for a B.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Spring, 2024.",
+    "summary": "I am studying for a M.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Spring, 2025.",
     "location": {
       "address": "",
-      "postalCode": "96815",
+      "postalCode": "96822",
       "city": "Honolulu",
       "countryCode": "USA",
       "region": "Hawaii"
@@ -29,6 +29,11 @@
   },
   "interests": [
     {
+      "name": "machine learning",
+      "keywords": [
+      ]
+    },
+    {
       "name": "software engineering",
       "keywords": [
       ]
@@ -37,10 +42,17 @@
       "name": "ultimate frisbee",
       "keywords": [
       ]
-    },
+    }
+  ],
+  "education": [
     {
-      "name": "chess",
-      "keywords": [
+      "institution": "University of Hawaii, Honolulu, HI",
+      "area": "Computer Science (expected Spring, 2025)",
+      "studyType": "M.S.",
+      "startDate": "2021-09-01",
+      "endDate": "Present",
+      "gpa": "4.0",
+      "courses": [
       ]
     }
   ],
@@ -49,13 +61,17 @@
       "name": "Languages",
       "level": "",
       "keywords": [
+        "POSIX",
         "C",
         "C++",
         "C#",
         "Java",
         "Javascript",
         "HTML",
-        "CSS"
+        "CSS",
+        "Python",
+        "Bash",
+        "x86 Assembly"
       ]
     },
     {
@@ -63,58 +79,47 @@
       "level": "",
       "keywords": [
         "Windows",
+        "Linux",
         "Git/GitHub",
+        "Jupyter",
+        "Pytorch",
         "Meteor",
-        "MongoDB",
-        "Bootstrap React",
-        "TestCafe"
+        "Flutter",
+        "MongoDB"
       ]
     }
   ],
-  "education": [
+  "professional experience": [
     {
-      "institution": "University of Hawaii, Honolulu, HI",
-      "area": "Computer Science (expected Spring, 2024)",
-      "studyType": "B.S.",
-      "startDate": "2021-09-01",
-      "endDate": "Present",
-      "gpa": "4.0",
-      "courses": [
-      ]
-    }
-  ],
-  "work": [
-    {
-      "company": "U.S. Marine Corps",
-      "position": "Sergeant",
+      "company": "United States Marine Corps",
+      "position": "Radio Technician and Maintenance Manager",
       "website": "",
       "startDate": "2016-10-31",
       "endDate": "2021-10-30",
       "summary": "Radio Technician and Maintenance Manager",
       "highlights": [
-        "Mentor, supervise, and lead both the professional and personal development of Marines",
-        "Perform and supervise all required maintenance on ground radio systems equipment"
+        "Installed and repaired various radio equipment, including multichannel radio systems, to support ground and aviation forces, ensuring reliable communication networks.",
+        "Conducted troubleshooting on combinations of radio sets, terminals, and associated devices to maintain uninterrupted service for end users, identifying and rectifying faults with precision and expertise.",
+        "Mentored, supervised, and led the professional and personal development of 10 junior personnel during this role."
       ]
     }
   ],
-  "volunteer": [
+  "professional organization involvement": [
     {
-      "organization": "Joey’s Feline Friends",
+      "organization": "Volunteers at Joey’s Feline Friends",
       "website": "https://www.facebook.com/JoeysFelineFriends/",
-      "position": "Volunteer",
+      "position": "",
       "startDate": "2020-11-28",
       "endDate": "Present",
-      "summary": "Assist in cleaning facility and caring for the cats"
+      "summary": "Assists in cleaning the facility and caring for cats"
     },
     {
-      "organization": "",
+      "organization": "Treasurer of the Ballroom Dance Club at UH",
       "website": "",
-      "position": "Professional organization involvement",
-      "startDate": "",
-      "endDate": "",
-      "summary": "Company Representative, Single Marines and Sailors Program, 2020-2021",
-      "highlights": [
-      ]
+      "position": "",
+      "startDate": "2022",
+      "endDate": "Present",
+      "summary": "Acquires funding from student organizations for competitions and events. Collects fees and expenses from club members and distributes reimbursements."
     }
   ],
   "awards": [
