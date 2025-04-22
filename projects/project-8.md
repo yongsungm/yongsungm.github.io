@@ -15,7 +15,25 @@ summary: An analysis of how public transportation might be improved using networ
 ---
 
 
-<embed src= "masuda_final_project.pdf" width= "500" height= "375" type="application/pdf">
+<style>
+  .pdf-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* Aspect ratio: 4:3; adjust as needed */
+  }
+
+  .pdf-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>
+
+<div class="pdf-container">
+  <iframe src="masuda_final_project.pdf"></iframe>
+</div>
 <br>
 <br>
 
