@@ -38,18 +38,14 @@
         {% include home-network-links.html %}
       </div>
       <div class="center aligned content">
-        <a href="{{ site.baseurl}}/projects/">
-          <button class="ui basic button">Projects ({{ num_projects }})</button>
-        </a>
-        <a href="{{ site.baseurl}}/essays/">
-          <button class="ui basic button">Essays ({{ num_essays }})</button>
-        </a>
-        <a href="{{ site.baseurl}}/bio/">
-          <button class="ui basic button">{{ site.bio-page-label }}</button>
-        </a>
-        <button class="ui basic button dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
-          <span class="theme-text">Light Mode</span> <i class="lightbulb icon"></i>
-        </button>
+        <div class="ui four stackable buttons">
+          <a href="{{ site.baseurl}}/projects/" class="ui basic button">Projects ({{ num_projects }})</a>
+          <a href="{{ site.baseurl}}/essays/" class="ui basic button">Essays ({{ num_essays }})</a>
+          <a href="{{ site.baseurl}}/bio/" class="ui basic button">{{ site.bio-page-label }}</a>
+          <button class="ui basic button dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
+            <span class="theme-text">Light Mode</span> <i class="lightbulb icon"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
