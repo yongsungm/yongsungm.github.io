@@ -322,6 +322,16 @@ div[class*="bio-"] {
   box-shadow: none !important;
 }
 
+/* Homepage buttons layout - keep it simple */
+.homepage-buttons-container {
+  text-align: center !important;
+}
+
+.homepage-buttons-container .ui.button {
+  margin: 3px 2px !important;
+  white-space: nowrap !important;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .ui.menu {
@@ -339,5 +349,18 @@ div[class*="bio-"] {
     padding: 20px !important;
     margin: 10px !important;
     border-radius: 4px !important;
+  }
+  
+  /* Stack homepage buttons on very small screens */
+  @media (max-width: 480px) {
+    .homepage-buttons-container {
+      flex-direction: column !important;
+      gap: 10px !important;
+    }
+    
+    .homepage-buttons-container .ui.button {
+      width: 100% !important;
+      max-width: 200px !important;
+    }
   }
 }
