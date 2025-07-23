@@ -1,0 +1,277 @@
+---
+---
+
+/* Custom Color Palette Theme */
+:root {
+  --chinese-violet: #67597a;   /* Deep purple */
+  --english-violet: #544e61;   /* Darker purple */
+  --slate-gray: #6e8894;       /* Blue-gray */
+  --cambridge-blue: #85baa1;   /* Sage green */
+  --honeydew: #ceeddb;         /* Light mint green */
+}
+
+/* Global background and text colors */
+body {
+  background-color: #f8f9fa !important; /* Neutral background for all pages */
+  color: var(--english-violet) !important;
+}
+
+/* Header and navigation */
+.ui.menu {
+  background-color: var(--english-violet) !important;
+  border: none !important;
+}
+
+.ui.menu .item {
+  color: var(--honeydew) !important;
+}
+
+.ui.menu .item:hover {
+  background-color: var(--chinese-violet) !important;
+  color: var(--honeydew) !important;
+}
+
+.ui.menu .active.item {
+  background-color: var(--cambridge-blue) !important;
+  color: var(--english-violet) !important;
+}
+
+/* Cards */
+.ui.card {
+  background-color: white !important;
+  border: 1px solid var(--cambridge-blue) !important;
+  box-shadow: 0 2px 8px rgba(84, 78, 97, 0.1) !important;
+}
+
+.ui.card > .content > .header {
+  color: var(--english-violet) !important;
+}
+
+.ui.card .meta {
+  color: var(--slate-gray) !important;
+}
+
+.ui.card .description {
+  color: var(--english-violet) !important;
+}
+
+/* Buttons */
+.ui.button {
+  background-color: var(--cambridge-blue) !important;
+  color: var(--english-violet) !important;
+  border: 1px solid var(--slate-gray) !important;
+}
+
+.ui.button:hover {
+  background-color: var(--slate-gray) !important;
+  color: var(--honeydew) !important;
+}
+
+.ui.basic.button {
+  background-color: transparent !important;
+  color: var(--english-violet) !important;
+  border: 1px solid var(--cambridge-blue) !important;
+}
+
+.ui.basic.button:hover {
+  background-color: var(--cambridge-blue) !important;
+  color: var(--english-violet) !important;
+}
+
+/* Labels/Tags */
+.ui.label {
+  background-color: var(--cambridge-blue) !important;
+  color: var(--english-violet) !important;
+  border: 1px solid var(--slate-gray) !important;
+}
+
+.ui.basic.label {
+  background-color: transparent !important;
+  color: var(--english-violet) !important;
+  border: 1px solid var(--cambridge-blue) !important;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--english-violet) !important;
+}
+
+.ui.header {
+  color: var(--english-violet) !important;
+}
+
+/* Links */
+a {
+  color: var(--slate-gray) !important;
+}
+
+a:hover {
+  color: var(--chinese-violet) !important;
+}
+
+/* Home page specific styling */
+.ui.fluid.centered.card {
+  background-color: white !important;
+  border: 1px solid var(--cambridge-blue) !important;
+  box-shadow: 0 4px 16px rgba(84, 78, 97, 0.15) !important;
+}
+
+/* Profile image border */
+.ui.circular.image {
+  border: 3px solid var(--cambridge-blue) !important;
+}
+
+/* Footer */
+.ui.footer {
+  background-color: var(--english-violet) !important;
+  color: var(--honeydew) !important;
+}
+
+/* Form elements */
+.ui.input input {
+  border: 1px solid var(--cambridge-blue) !important;
+  background-color: white !important;
+  color: var(--english-violet) !important;
+}
+
+.ui.input input:focus {
+  border-color: var(--slate-gray) !important;
+}
+
+/* Tables */
+.ui.table {
+  background-color: white !important;
+  border: 1px solid var(--cambridge-blue) !important;
+}
+
+.ui.table thead th {
+  background-color: var(--cambridge-blue) !important;
+  color: var(--english-violet) !important;
+}
+
+.ui.table tbody tr {
+  border-bottom: 1px solid var(--cambridge-blue) !important;
+}
+
+/* Code blocks */
+pre {
+  background-color: var(--english-violet) !important;
+  color: var(--honeydew) !important;
+  border: 1px solid var(--slate-gray) !important;
+}
+
+code {
+  background-color: var(--cambridge-blue) !important;
+  color: var(--english-violet) !important;
+  padding: 2px 4px !important;
+  border-radius: 3px !important;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--slate-gray) !important;
+  background-color: rgba(133, 186, 161, 0.1) !important;
+  color: var(--english-violet) !important;
+}
+
+/* Dividers */
+.ui.divider {
+  border-color: var(--cambridge-blue) !important;
+}
+
+/* Icons */
+.ui.menu .item > i.icon {
+  color: var(--honeydew) !important;
+}
+
+/* Hover effects for cards */
+.ui.card:hover {
+  box-shadow: 0 4px 20px rgba(84, 78, 97, 0.2) !important;
+  transform: translateY(-2px);
+  transition: all 0.3s ease !important;
+}
+
+/* Social media icons */
+.ui.menu .item i.github.icon,
+.ui.menu .item i.linkedin.icon {
+  color: var(--honeydew) !important;
+}
+
+.ui.menu .item:hover i.github.icon,
+.ui.menu .item:hover i.linkedin.icon {
+  color: var(--cambridge-blue) !important;
+}
+
+/* Project and essay grid improvements */
+.ui.stackable.grid {
+  background-color: #f8f9fa !important;
+}
+
+/* Subtle animations */
+.ui.button,
+.ui.card,
+.ui.label {
+  transition: all 0.3s ease !important;
+}
+
+
+
+/* Override for individual content pages */
+.ui.text.container {
+  background-color: white !important;
+  padding: 40px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 12px rgba(84, 78, 97, 0.1) !important;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  border: 1px solid var(--cambridge-blue) !important;
+}
+
+/* Bio/Resume page content styling - same as project/essay pages */
+.ui.container {
+  background-color: white !important;
+  padding: 40px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 12px rgba(84, 78, 97, 0.1) !important;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  border: 1px solid var(--cambridge-blue) !important;
+}
+
+/* Exception for home page container - keep it transparent */
+.ui.middle.aligned.grid .ui.container {
+  background-color: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+}
+
+/* Ensure bio sections have proper styling within the container */
+div[class*="bio-"] {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  padding: 20px !important;
+  border-radius: 6px !important;
+  margin: 15px 0 !important;
+  border: 1px solid var(--cambridge-blue) !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .ui.menu {
+    background-color: var(--english-violet) !important;
+  }
+  
+  .ui.menu .item {
+    color: var(--honeydew) !important;
+  }
+  
+  /* Adjust content page containers for mobile */
+  .project-page .ui.container,
+  .essay-page .ui.container,
+  .bio-page .ui.container {
+    padding: 20px !important;
+    margin: 10px !important;
+    border-radius: 4px !important;
+  }
+}
