@@ -1,0 +1,117 @@
+---
+layout: project
+type: project
+image: projects/mosquito-larvae-detection/images/icon.png
+title: Mosquito Larvae Detection
+permalink: projects/mosquito-larvae-detection/
+# All dates must be YYYY-MM-DD format!
+date: 2024-05-11
+labels:
+  - Machine Learning
+  - Transfer learning
+  - Object Detection
+  - YOLOv8
+
+summary: An object detection model for identifying and counting mosquito larvae and eggs
+---
+<head>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<h2>Purpose:</h2>
+<p>
+Counting mosquito larvae in an aliquot is a tedious task faced by PhD students researching mosquito population control. This paper presents a machine learning approach to this problem, leveraging a minimal dataset of only 96 images. The goal is to develop a model that can accurately detect and count mosquito larvae in images taken in a laboratory environment.
+</p>
+<h2>Dataset:</h2>
+The model's inputs are images of mosquito larvae and mosquito eggs in an aliquot, and the output is the location, dimensions, and classifications of the objects detected within these two classes. Initially, the model was trained to detect live larvae only, as this is the targeted class to be identified. This resulted in the eggs occasionally being misclassified as larvae, so the model is now trained to distinguish between live larvae and eggs to reduce this error. Due to the limited nature of the dataset, a transfer learning method is implemented using the generic object detection model YOLOv8.
+The dataset consists of 96 images of size 2592 by 1944 pixels. The images have a uniform background and lighting and contain three classes of objects: live larvae, dead larvae, and eggs. Because there are very few samples of dead larvae in the dataset, this class is excluded from the training process. Each object within the images is labeled by class with bounding boxes tightly surrounding them. The data is randomly permuted and split as follows:
+<ul>
+  <li>Training set: 67 images (70%)</li>
+  <li>Validation set: 19 images (20%)</li>
+  <li>Test set: 10 images (10%)</li>
+</ul>
+<p>
+The model is trained on the training set and the validation set was used for hyperparameter selection and early stopping. The test set is used to evaluate the final model.
+</p>
+<h2>Preprocessing & Tuning:</h2>
+<p>
+Preprocessing includes auto-orienting the images to ensure the bounding boxes match the image orientation. The images are not resized due to the small nature of the dataset, as well as to avoid requiring preprocessing during the usage of the trained model. The bounding boxes
+are encoded using the YOLO format, which consists of its class number and four values between 0 and 1 describing its center coordinate and height and width relative to the dimensions.
+Hyperparameter tuning for this model was conducted using the YOLO model tune method to optimize the model's performance. YOLO tune method uses the mutation algorithm which searches the hyperparameter space by applying small random changes to existing hyperparameters. Tuning was conducted with AdamW optimization for 93 iterations for 30 epochs each. The hyperparameters which were included in the tuning process and their final values are as follows:
+</p>
+<table>
+    <tr>
+        <th>Hyperparameter</th>
+        <th>Value</th>
+    </tr>
+    <tr><td>lr0</td><td>0.00838</td></tr>
+    <tr><td>lrf</td><td>0.01346</td></tr>
+    <tr><td>momentum</td><td>0.86808</td></tr>
+    <tr><td>weight_decay</td><td>0.00041</td></tr>
+    <tr><td>warmup_epochs</td><td>3.37112</td></tr>
+    <tr><td>warmup_momentum</td><td>0.88987</td></tr>
+    <tr><td>box</td><td>9.86137</td></tr>
+    <tr><td>cls</td><td>0.44448</td></tr>
+    <tr><td>dfl</td><td>1.59169</td></tr>
+    <tr><td>hsv_h</td><td>0.01633</td></tr>
+    <tr><td>hsv_s</td><td>0.54486</td></tr>
+    <tr><td>hsv_v</td><td>0.55232</td></tr>
+    <tr><td>degrees</td><td>0</td></tr>
+    <tr><td>translate</td><td>0.08194</td></tr>
+    <tr><td>scale</td><td>0.45391</td></tr>
+    <tr><td>shear</td><td>0</td></tr>
+    <tr><td>perspective</td><td>0</td></tr>
+    <tr><td>flipud</td><td>0</td></tr>
+    <tr><td>fliplr</td><td>0.53219</td></tr>
+    <tr><td>bgr</td><td>0</td></tr>
+    <tr><td>mosaic</td><td>0.94871</td></tr>
+    <tr><td>mixup</td><td>0</td></tr>
+    <tr><td>copy_paste</td><td>0</td></tr>
+</table>
+<h2>Training & Evaluation</h2>
+<p>
+The base model used is "yolov8n" and is trained using the best hyperparameters from the tuning process. Training was set to be conducted for 500 epochs with early stopping and a patience of 100. Training ended after epoch 376 and the best results were observed at 276. Figure 1 shows the labels manually added by humans alongside the model's predictions and their corresponding confidence levels. These predictions were generated by the final model on the test data that was not included in the training or validation processes.
+</p>
+<figure>
+    <img class="ui image" src="images/labels-vs-predictions.png">
+    <figcaption>Figure 1: Human-added labels (left) vs model predictions (right)</figcaption>
+</figure>
+
+<p>The performance of this model is evaluated using the following metrics:</p>
+<ul>
+    <li>
+        <strong>Precision-Recall:</strong> A plot of the trade-off between:
+        <ul>
+            <li><strong>Precision:</strong> the ratio of true positive predictions to the total number of positive predictions.</li>
+            <li><strong>Recall:</strong> the ratio of true positive predictions to the total number of actual positive instances in the data.</li>
+        </ul>
+    </li>
+    <li><strong>Precision-Confidence:</strong> A plot of precision at different confidence thresholds.</li>
+    <li><strong>Recall-Confidence:</strong> A plot of recall at different confidence thresholds.</li>
+    <li><strong>F1-Confidence:</strong> A plot of the F1 score at different confidence thresholds. The F1 score is the harmonic mean of precision and recall.</li>
+</ul>
+<p>The F1 score for this model has a peak value of <strong>0.94</strong> at a confidence threshold of <strong>0.32</strong>.</p>
+<h2>Distribution Shift:</h2>
+<p>
+While this model has been highly evaluated for its performance, its ability to generalize is not thoroughly proven due to the minuscule size of the test set. Since all training was conducted using images from the same source and in the same setting, it is likely that the model will not generalize well to photos taken under different conditions, such as those with a different background or lighting. Any variation in these factors could significantly impact the model's ability to accurately detect and classify mosquito larvae.
+</p>
+<br/>
+<img class="ui image" src="images/PR-curve.png"/>
+<br/>
+<img class="ui image" src="images/PC-curve.png"/>
+<br/>
+<img class="ui image" src="images/RC-curve.png"/>
+<br/>
+<img class="ui image" src="images/F1-curve.png"/>
+<br/>
+<pre>Source: <a href="https://github.com/yongsungm/mosquito_larvae_counter_YOLOv8"><i class="large github icon"></i>mosquito_larvae_counter_YOLOv8</a>
+<br/>
