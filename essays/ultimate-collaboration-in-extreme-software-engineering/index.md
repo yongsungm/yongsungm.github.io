@@ -11,7 +11,7 @@ labels:
   - Collaboration
   - Software Engineering
 ---
-<img class="ui image" src="images/extreme-software-engineering.png">
+<img class="ui image" src="{{ site.baseurl }}/essays/ultimate-collaboration-in-extreme-software-engineering/images/extreme-software-engineering.png">
 
 I started college with the broad intention of becoming a software engineer, but through many project experiences, I've discovered that I can invest myself more fully into projects which I find interesting or which require ingenuity and creativity. During Fall Semester 2023, I completed 3 courses primarily consisting of semester-long group projects as well as an independent study on cybersecurity. While all of these courses were worthwhile and educational, I found myself preferring some over others, which has helped me develop a better idea of the type of work I might like to explore in the future. Regardless, I love every project I work on, and I enjoy the process of software engineering itself. I am glad to have been able to get so much experience with it in a single semester.
 

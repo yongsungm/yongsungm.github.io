@@ -13,7 +13,7 @@ labels:
 
 summary: A simple database program with read/write capabilities and a console UI
 ---
-<img class="ui image" src="images/screenshot.png">
+<img class="ui image" src="{{ site.baseurl }}/projects/database-program/images/screenshot.png">
 This is an individual project I completed in ICS 212, Fall 2021. Doing this project helped me learn how to compile a C application with multiple source files, how to use a Makefile, and how to implement a simple linked list data structure using principles of object-oriented programming.
 
 The user interface was designed to be robust using error handling for all cases of user input.
