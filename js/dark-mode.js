@@ -1,20 +1,30 @@
-// Dark Mode Toggle Functionality
-(function() {
+// Dark Mode Toggle Functionality - GitHub Pages Compatible
+(function () {
+    'use strict';
+
+    // Debug function
+    function debug(message) {
+        console.log('[Dark Mode]', message);
+    }
+
     // Check for saved theme preference or default to light mode
     const currentTheme = localStorage.getItem('theme') || 'light';
-    
-    // Apply the saved theme on page load
+    debug('Initial theme: ' + currentTheme);
+
+    // Apply the saved theme immediately (before DOM loads)
     document.documentElement.setAttribute('data-theme', currentTheme);
-    
+
     // Update the lightbulb icon and text based on current theme
     function updateIcon() {
         const toggles = document.querySelectorAll('.dark-mode-toggle');
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-        
+
+        debug('Updating icons, isDark: ' + isDark + ', found toggles: ' + toggles.length);
+
         toggles.forEach(toggle => {
             const icon = toggle.querySelector('i');
             const text = toggle.querySelector('.theme-text');
-            
+
             if (icon) {
                 if (isDark) {
                     icon.className = 'lightbulb outline icon'; // Outline for dark mode
@@ -22,7 +32,7 @@
                     icon.className = 'lightbulb icon'; // Solid for light mode
                 }
             }
-            
+
             if (text) {
                 if (isDark) {
                     text.textContent = 'Light Mode'; // Show "Light Mode" when in dark mode
@@ -32,55 +42,86 @@
             }
         });
     }
-    
-    // Initialize icon when DOM is loaded
-    document.addEventListener('DOMContentLoaded', function() {
-        updateIcon();
-    });
-    
+
     // Toggle dark mode function
-    window.toggleDarkMode = function(event) {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
+    window.toggleDarkMode = function (event) {
+        debug('Toggle function called');
+
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
+
+        debug('Switching from ' + currentTheme + ' to ' + newTheme);
+
         // Apply new theme
         document.documentElement.setAttribute('data-theme', newTheme);
-        
+
         // Save preference to localStorage
-        localStorage.setItem('theme', newTheme);
-        
+        try {
+            localStorage.setItem('theme', newTheme);
+            debug('Theme saved to localStorage: ' + newTheme);
+        } catch (e) {
+            debug('Failed to save to localStorage: ' + e.message);
+        }
+
         // Update icon
         updateIcon();
-        
+
         // Remove focus from the button to prevent highlighting
         if (event && event.target) {
             event.target.blur();
         }
-        
+
         // Add a subtle animation effect
         document.body.style.transition = 'all 0.3s ease';
         setTimeout(() => {
             document.body.style.transition = '';
         }, 300);
+
+        // Force a repaint
+        document.body.offsetHeight;
     };
-    
+
+    // Initialize when DOM is ready
+    function initialize() {
+        debug('Initializing dark mode');
+        updateIcon();
+
+        // Also update after a short delay to catch any late-loading elements
+        setTimeout(updateIcon, 100);
+    }
+
+    // Multiple ways to ensure initialization
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initialize);
+    } else {
+        initialize();
+    }
+
+    // Also initialize when window loads (backup)
+    window.addEventListener('load', initialize);
+
     // Listen for system theme changes
     if (window.matchMedia) {
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        
+
         // Only apply system preference if no user preference is saved
         if (!localStorage.getItem('theme')) {
-            document.documentElement.setAttribute('data-theme', mediaQuery.matches ? 'dark' : 'light');
-            updateIcon();
+            const systemTheme = mediaQuery.matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', systemTheme);
+            debug('Applied system theme: ' + systemTheme);
         }
-        
+
         // Listen for changes in system preference
-        mediaQuery.addEventListener('change', function(e) {
+        mediaQuery.addEventListener('change', function (e) {
             // Only apply if no user preference is saved
             if (!localStorage.getItem('theme')) {
-                document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+                const systemTheme = e.matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', systemTheme);
                 updateIcon();
+                debug('System theme changed to: ' + systemTheme);
             }
         });
     }
+
+    debug('Dark mode script loaded');
 })();

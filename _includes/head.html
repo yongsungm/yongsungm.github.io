@@ -23,8 +23,83 @@
   <!-- Load custom color theme -->
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl}}/css/custom-theme.css">
   
-  <!-- Load dark mode functionality -->
-  <script src="{{ site.baseurl}}/js/dark-mode.js"></script>
+  <!-- Load dark mode functionality after other scripts -->
+  <script>
+    // Inline dark mode script for better GitHub Pages compatibility
+    (function() {
+        'use strict';
+        
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        console.log('[Dark Mode] Initial theme:', currentTheme);
+        
+        // Apply the saved theme immediately
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        
+        // Update icons and text
+        function updateIcon() {
+            const toggles = document.querySelectorAll('.dark-mode-toggle');
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            
+            console.log('[Dark Mode] Updating icons, isDark:', isDark, 'toggles found:', toggles.length);
+            
+            toggles.forEach(toggle => {
+                const icon = toggle.querySelector('i');
+                const text = toggle.querySelector('.theme-text');
+                
+                if (icon) {
+                    icon.className = isDark ? 'lightbulb outline icon' : 'lightbulb icon';
+                }
+                
+                if (text) {
+                    text.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+                }
+            });
+        }
+        
+        // Toggle function
+        window.toggleDarkMode = function(event) {
+            console.log('[Dark Mode] Toggle clicked');
+            
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            console.log('[Dark Mode] Switching from', currentTheme, 'to', newTheme);
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            updateIcon();
+            
+            if (event && event.target) {
+                event.target.blur();
+            }
+            
+            // Force repaint
+            document.body.style.transition = 'all 0.3s ease';
+            setTimeout(() => {
+                document.body.style.transition = '';
+            }, 300);
+        };
+        
+        // Initialize
+        function init() {
+            console.log('[Dark Mode] Initializing');
+            updateIcon();
+            setTimeout(updateIcon, 500); // Delayed update for late elements
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+        
+        window.addEventListener('load', init);
+        
+        console.log('[Dark Mode] Script loaded');
+    })();
+  </script>
 
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl}}/css/print-default.css" media="print">
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl}}/css/print-customizations.css" media="print">
