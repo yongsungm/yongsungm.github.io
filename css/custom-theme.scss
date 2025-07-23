@@ -8,12 +8,31 @@
   --slate-gray: #6e8894;       /* Blue-gray */
   --cambridge-blue: #85baa1;   /* Sage green */
   --honeydew: #ceeddb;         /* Light mint green */
+  
+  /* Light mode variables */
+  --bg-primary: #f8f9fa;
+  --bg-secondary: white;
+  --text-primary: var(--english-violet);
+  --text-secondary: var(--slate-gray);
+  --border-color: var(--cambridge-blue);
+  --shadow-color: rgba(84, 78, 97, 0.1);
+}
+
+/* Dark mode variables */
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --border-color: var(--slate-gray);
+  --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 /* Global background and text colors */
 body {
-  background-color: #f8f9fa !important; /* Neutral background for all pages */
-  color: var(--english-violet) !important;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
 }
 
 /* Header and navigation */
@@ -38,21 +57,22 @@ body {
 
 /* Cards */
 .ui.card {
-  background-color: white !important;
-  border: 1px solid var(--cambridge-blue) !important;
-  box-shadow: 0 2px 8px rgba(84, 78, 97, 0.1) !important;
+  background-color: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 2px 8px var(--shadow-color) !important;
+  transition: all 0.3s ease !important;
 }
 
 .ui.card > .content > .header {
-  color: var(--english-violet) !important;
+  color: var(--text-primary) !important;
 }
 
 .ui.card .meta {
-  color: var(--slate-gray) !important;
+  color: var(--text-secondary) !important;
 }
 
 .ui.card .description {
-  color: var(--english-violet) !important;
+  color: var(--text-primary) !important;
 }
 
 /* Buttons */
@@ -69,8 +89,8 @@ body {
 
 .ui.basic.button {
   background-color: transparent !important;
-  color: var(--english-violet) !important;
-  border: 1px solid var(--cambridge-blue) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
 }
 
 .ui.basic.button:hover {
@@ -93,11 +113,11 @@ body {
 
 /* Headers */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--english-violet) !important;
+  color: var(--text-primary) !important;
 }
 
 .ui.header {
-  color: var(--english-violet) !important;
+  color: var(--text-primary) !important;
 }
 
 /* Links */
@@ -111,9 +131,9 @@ a:hover {
 
 /* Home page specific styling */
 .ui.fluid.centered.card {
-  background-color: white !important;
-  border: 1px solid var(--cambridge-blue) !important;
-  box-shadow: 0 4px 16px rgba(84, 78, 97, 0.15) !important;
+  background-color: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 4px 16px var(--shadow-color) !important;
 }
 
 /* Profile image border */
@@ -129,9 +149,9 @@ a:hover {
 
 /* Form elements */
 .ui.input input {
-  border: 1px solid var(--cambridge-blue) !important;
-  background-color: white !important;
-  color: var(--english-violet) !important;
+  border: 1px solid var(--border-color) !important;
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
 }
 
 .ui.input input:focus {
@@ -140,8 +160,8 @@ a:hover {
 
 /* Tables */
 .ui.table {
-  background-color: white !important;
-  border: 1px solid var(--cambridge-blue) !important;
+  background-color: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color) !important;
 }
 
 .ui.table thead th {
@@ -150,7 +170,12 @@ a:hover {
 }
 
 .ui.table tbody tr {
-  border-bottom: 1px solid var(--cambridge-blue) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.ui.table tbody td {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
 }
 
 /* Code blocks */
@@ -204,7 +229,7 @@ blockquote {
 
 /* Project and essay grid improvements */
 .ui.stackable.grid {
-  background-color: #f8f9fa !important;
+  background-color: var(--bg-primary) !important;
 }
 
 /* Subtle animations */
@@ -218,24 +243,26 @@ blockquote {
 
 /* Override for individual content pages */
 .ui.text.container {
-  background-color: white !important;
+  background-color: var(--bg-secondary) !important;
   padding: 40px !important;
   border-radius: 8px !important;
-  box-shadow: 0 2px 12px rgba(84, 78, 97, 0.1) !important;
+  box-shadow: 0 2px 12px var(--shadow-color) !important;
   margin-top: 20px !important;
   margin-bottom: 20px !important;
-  border: 1px solid var(--cambridge-blue) !important;
+  border: 1px solid var(--border-color) !important;
+  transition: all 0.3s ease !important;
 }
 
 /* Bio/Resume page content styling - same as project/essay pages */
 .ui.container {
-  background-color: white !important;
+  background-color: var(--bg-secondary) !important;
   padding: 40px !important;
   border-radius: 8px !important;
-  box-shadow: 0 2px 12px rgba(84, 78, 97, 0.1) !important;
+  box-shadow: 0 2px 12px var(--shadow-color) !important;
   margin-top: 20px !important;
   margin-bottom: 20px !important;
-  border: 1px solid var(--cambridge-blue) !important;
+  border: 1px solid var(--border-color) !important;
+  transition: all 0.3s ease !important;
 }
 
 /* Exception for home page container - keep it transparent */
@@ -249,11 +276,50 @@ blockquote {
 
 /* Ensure bio sections have proper styling within the container */
 div[class*="bio-"] {
-  background-color: rgba(255, 255, 255, 0.7) !important;
+  background-color: var(--bg-secondary) !important;
   padding: 20px !important;
   border-radius: 6px !important;
   margin: 15px 0 !important;
-  border: 1px solid var(--cambridge-blue) !important;
+  border: 1px solid var(--border-color) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  background: none !important;
+  border: none !important;
+  color: var(--honeydew) !important;
+  cursor: pointer !important;
+  padding: 10px !important;
+  transition: all 0.3s ease !important;
+}
+
+.dark-mode-toggle:hover {
+  background-color: var(--chinese-violet) !important;
+  color: var(--honeydew) !important;
+}
+
+.dark-mode-toggle i {
+  font-size: 1.2em !important;
+}
+
+/* Homepage dark mode toggle styling */
+.ui.basic.button.dark-mode-toggle {
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.ui.basic.button.dark-mode-toggle:hover {
+  background-color: var(--cambridge-blue) !important;
+  color: var(--english-violet) !important;
+}
+
+.ui.basic.button.dark-mode-toggle:focus,
+.ui.basic.button.dark-mode-toggle:active {
+  background-color: transparent !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: none !important;
 }
 
 /* Mobile responsiveness */
