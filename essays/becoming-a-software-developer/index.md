@@ -2,6 +2,7 @@
 layout: essay
 type: essay
 title: Becoming a Software Developer
+draft: true
 permalink: essays/becoming-a-software-developer/
 # All dates must be YYYY-MM-DD format!
 date: 2022-05-12

@@ -2,6 +2,7 @@
 layout: essay
 type: essay
 title: Does Your Code Need Spell-Checking?
+draft: true
 permalink: essays/does-your-code-need-spell-checking/
 # All dates must be YYYY-MM-DD format!
 date: 2022-02-10

@@ -2,6 +2,7 @@
 layout: essay
 type: essay
 title: Why Software Engineering
+draft: true
 permalink: essays/why-software-engineering/
 # All dates must be YYYY-MM-DD format!
 date: 2022-01-20

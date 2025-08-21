@@ -2,6 +2,7 @@
 layout: essay
 type: essay
 title: Ultimate Collaboration in Extreme Software Engineering
+draft: true
 permalink: essays/ultimate-collaboration-in-extreme-software-engineering/
 # All dates must be YYYY-MM-DD format!
 date: 2023-12-10

@@ -2,6 +2,7 @@
 layout: essay
 type: essay
 title: JavaScript - Cure for the Common Code
+draft: true
 permalink: essays/javascript-cure-for-common-code/
 # All dates must be YYYY-MM-DD format!
 date: 2022-01-18
