@@ -1,8 +1,10 @@
 <!-- Home page design with small circular image bisecting card. -->
 
 {% assign essay_pages = site.pages | where: "type", "essay"  | where_exp: "page", "page.draft != true" %}
+{% assign paper_pages = site.pages | where: "type", "paper"  | where_exp: "page", "page.draft != true" %}
 {% assign project_pages = site.pages | where: "type", "project" | where_exp: "page", "page.draft != true" %}
 {% assign num_essays = essay_pages.size %}
+{% assign num_papers = paper_pages.size %}
 {% assign num_projects = project_pages.size %}
 
 <div style="height: 100%; margin-top: -75px" class="ui middle aligned grid ">
@@ -40,6 +42,9 @@
       <div class="center aligned content homepage-buttons-container">
         <a href="{{ site.baseurl}}/projects/">
           <button class="ui basic button">Projects ({{ num_projects }})</button>
+        </a>
+        <a href="{{ site.baseurl}}/papers/">
+          <button class="ui basic button">Papers ({{ num_papers }})</button>
         </a>
         <a href="{{ site.baseurl}}/essays/">
           <button class="ui basic button">Essays ({{ num_essays }})</button>
