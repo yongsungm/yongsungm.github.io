@@ -44,7 +44,6 @@
         <button class="ui basic button" onclick="loadSection('papers')">Papers ({{ num_papers }})</button>
         <button class="ui basic button" onclick="loadSection('essays')">Essays ({{ num_essays }})</button>
         <button class="ui basic button" onclick="loadSection('bio')">{{ site.bio-page-label }}</button>
-        <button class="ui basic button" onclick="loadSection('home')">Home</button>
         <button class="ui basic button dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
           <span class="theme-text">Light Mode</span> <i class="lightbulb icon"></i>
         </button>
@@ -105,10 +104,10 @@
     }
   }
 
-  /* Active button styling */
+  /* Active button styling - with dark mode support */
   .homepage-buttons-container button.active {
-    background-color: #1b1c1d !important;
-    color: white !important;
+    background-color: var(--slate-gray) !important;
+    color: var(--honeydew) !important;
   }
 
   /* Smooth button hover effects */
@@ -118,7 +117,79 @@
 
   .homepage-buttons-container button:hover {
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
+  }
+
+  /* Dynamic content area styling with dark mode support */
+  #dynamic-content {
+    background-color: var(--bg-primary) !important;
+  }
+
+  #dynamic-content .ui.container {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 12px var(--shadow-color) !important;
+    padding: 40px !important;
+  }
+
+  #dynamic-content .ui.segment {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  /* Content sections styling */
+  .content-section {
+    background-color: transparent !important;
+  }
+
+  .content-section .ui.header {
+    color: var(--text-primary) !important;
+    margin-bottom: 30px !important;
+  }
+
+  /* Ensure all cards in dynamic content inherit theme */
+  #dynamic-content .ui.card {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 2px 8px var(--shadow-color) !important;
+  }
+
+  #dynamic-content .ui.card .header {
+    color: var(--text-primary) !important;
+  }
+
+  #dynamic-content .ui.card .meta {
+    color: var(--text-secondary) !important;
+  }
+
+  #dynamic-content .ui.card .description {
+    color: var(--text-primary) !important;
+  }
+
+  /* Buttons in dynamic content */
+  #dynamic-content .ui.button {
+    background-color: var(--cambridge-blue) !important;
+    color: var(--english-violet) !important;
+    border: 1px solid var(--slate-gray) !important;
+  }
+
+  #dynamic-content .ui.button:hover {
+    background-color: var(--slate-gray) !important;
+    color: var(--honeydew) !important;
+  }
+
+  #dynamic-content .ui.basic.button {
+    background-color: transparent !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+  }
+
+  #dynamic-content .ui.basic.button:hover {
+    background-color: var(--cambridge-blue) !important;
+    color: var(--english-violet) !important;
   }
 </style>
 
