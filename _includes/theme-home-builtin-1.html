@@ -1,7 +1,7 @@
 <!-- Home page design with small circular image bisecting card. -->
 
-{% assign essay_pages = site.pages | where: "type", "essay"  | where_exp: "page", "page.draft != true" %}
-{% assign paper_pages = site.pages | where: "type", "paper"  | where_exp: "page", "page.draft != true" %}
+{% assign essay_pages = site.pages | where: "type", "essay" | where_exp: "page", "page.draft != true" %}
+{% assign paper_pages = site.pages | where: "type", "paper" | where_exp: "page", "page.draft != true" %}
 {% assign project_pages = site.pages | where: "type", "project" | where_exp: "page", "page.draft != true" %}
 {% assign num_essays = essay_pages.size %}
 {% assign num_papers = paper_pages.size %}
@@ -31,7 +31,7 @@
         <div class="description">
           Interests:
           {% for interest in site.data.bio.interests %}
-            {{ interest.name }}{% if forloop.last != true %}, {% endif %}
+          {{ interest.name }}{% if forloop.last != true %}, {% endif %}
           {% endfor %}
 
         </div>
@@ -40,18 +40,11 @@
         {% include home-network-links.html %}
       </div>
       <div class="center aligned content homepage-buttons-container">
-        <a href="{{ site.baseurl}}/projects/">
-          <button class="ui basic button">Projects ({{ num_projects }})</button>
-        </a>
-        <a href="{{ site.baseurl}}/papers/">
-          <button class="ui basic button">Papers ({{ num_papers }})</button>
-        </a>
-        <a href="{{ site.baseurl}}/essays/">
-          <button class="ui basic button">Essays ({{ num_essays }})</button>
-        </a>
-        <a href="{{ site.baseurl}}/bio/">
-          <button class="ui basic button">{{ site.bio-page-label }}</button>
-        </a>
+        <button class="ui basic button" onclick="loadSection('projects')">Projects ({{ num_projects }})</button>
+        <button class="ui basic button" onclick="loadSection('papers')">Papers ({{ num_papers }})</button>
+        <button class="ui basic button" onclick="loadSection('essays')">Essays ({{ num_essays }})</button>
+        <button class="ui basic button" onclick="loadSection('bio')">{{ site.bio-page-label }}</button>
+        <button class="ui basic button" onclick="loadSection('home')">Home</button>
         <button class="ui basic button dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
           <span class="theme-text">Light Mode</span> <i class="lightbulb icon"></i>
         </button>
@@ -60,3 +53,148 @@
   </div>
 
 </div>
+
+<!-- Dynamic content area -->
+<div id="dynamic-content" class="ui container" style="margin-top: 50px; display: none;">
+  <div class="ui segment">
+    <div id="content-loader" class="ui active centered inline loader" style="display: none;"></div>
+    <div id="content-area">
+      <!-- Pre-rendered content sections (hidden by default) -->
+      <div id="projects-section" class="content-section" style="display: none;">
+        <h2 class="ui header">Projects</h2>
+        {% include content-projects.html %}
+      </div>
+
+      <div id="papers-section" class="content-section" style="display: none;">
+        <h2 class="ui header">Papers</h2>
+        {% include content-papers.html %}
+      </div>
+
+      <div id="essays-section" class="content-section" style="display: none;">
+        <h2 class="ui header">Essays</h2>
+        {% include content-essays.html %}
+      </div>
+
+      <div id="bio-section" class="content-section" style="display: none;">
+        <h2 class="ui header">Resume</h2>
+        {% include content-bio.html %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Smooth transitions for content loading */
+  #dynamic-content {
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .content-section {
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Active button styling */
+  .homepage-buttons-container button.active {
+    background-color: #1b1c1d !important;
+    color: white !important;
+  }
+
+  /* Smooth button hover effects */
+  .homepage-buttons-container button {
+    transition: all 0.2s ease;
+  }
+
+  .homepage-buttons-container button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+<script>
+  // Content loading functionality
+  let currentSection = 'home';
+
+  function loadSection(section) {
+    const contentArea = document.getElementById('dynamic-content');
+    const loader = document.getElementById('content-loader');
+
+    // Update button states and URL
+    updateButtonStates(section);
+    updateURL(section);
+
+    if (section === 'home') {
+      contentArea.style.display = 'none';
+      currentSection = 'home';
+      // Smooth scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    // Show loading state
+    contentArea.style.display = 'block';
+    loader.style.display = 'block';
+
+    // Hide all content sections
+    const allSections = document.querySelectorAll('.content-section');
+    allSections.forEach(s => s.style.display = 'none');
+
+    // Simulate loading and then show content
+    setTimeout(() => {
+      loader.style.display = 'none';
+      const targetSection = document.getElementById(section + '-section');
+      if (targetSection) {
+        targetSection.style.display = 'block';
+      }
+      currentSection = section;
+
+      // Smooth scroll to content area
+      contentArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 300);
+  }
+
+  function updateButtonStates(activeSection) {
+    const buttons = document.querySelectorAll('.homepage-buttons-container button:not(.dark-mode-toggle)');
+    buttons.forEach(button => {
+      button.classList.remove('active');
+    });
+
+    if (activeSection !== 'home') {
+      const activeButton = document.querySelector(`button[onclick="loadSection('${activeSection}')"]`);
+      if (activeButton) {
+        activeButton.classList.add('active');
+      }
+    }
+  }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', function () {
+    // Check if there's a hash in the URL to load a specific section
+    const hash = window.location.hash.substring(1);
+    if (hash && ['projects', 'papers', 'essays', 'bio'].includes(hash)) {
+      loadSection(hash);
+    } else {
+      currentSection = 'home';
+    }
+  });
+
+  // Update URL hash when section changes
+  function updateURL(section) {
+    if (section === 'home') {
+      history.replaceState(null, null, window.location.pathname);
+    } else {
+      history.replaceState(null, null, '#' + section);
+    }
+  }
+</script>
