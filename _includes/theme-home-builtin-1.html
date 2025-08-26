@@ -64,6 +64,18 @@
         {% include content-projects.html %}
       </div>
 
+      <div id="project-detail-section" class="content-section" style="display: none;">
+        <div class="ui basic segment">
+          <button class="ui labeled icon button" onclick="loadSection('projects')">
+            <i class="left arrow icon"></i>
+            Back to Projects
+          </button>
+        </div>
+        <div id="project-detail-content">
+          <!-- Project content will be loaded here -->
+        </div>
+      </div>
+
       <div id="papers-section" class="content-section" style="display: none;">
         <h2 class="ui header">Papers</h2>
         {% include content-papers.html %}
@@ -267,5 +279,50 @@
     } else {
       history.replaceState(null, null, '#' + section);
     }
+  }
+
+  // Load individual project content
+  function loadProject(projectUrl, projectTitle) {
+    const contentArea = document.getElementById('dynamic-content');
+    const loader = document.getElementById('content-loader');
+    const projectDetailContent = document.getElementById('project-detail-content');
+
+    // Show loading state
+    contentArea.style.display = 'block';
+    loader.style.display = 'block';
+
+    // Hide all content sections
+    const allSections = document.querySelectorAll('.content-section');
+    allSections.forEach(s => s.style.display = 'none');
+
+    // Fetch project content
+    fetch('{{ site.baseurl }}' + projectUrl)
+      .then(response => response.text())
+      .then(html => {
+        // Extract content from the fetched page
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const content = doc.querySelector('.ui.text.container') || doc.querySelector('.ui.container') || doc.querySelector('main');
+        
+        if (content) {
+          projectDetailContent.innerHTML = '<h2 class="ui header">' + projectTitle + '</h2>' + content.innerHTML;
+        } else {
+          projectDetailContent.innerHTML = '<h2 class="ui header">' + projectTitle + '</h2><p>Content could not be loaded.</p>';
+        }
+
+        // Show project detail section
+        loader.style.display = 'none';
+        document.getElementById('project-detail-section').style.display = 'block';
+        currentSection = 'project-detail';
+
+        // Smooth scroll to content area
+        contentArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      })
+      .catch(error => {
+        console.error('Error loading project:', error);
+        projectDetailContent.innerHTML = '<h2 class="ui header">' + projectTitle + '</h2><p>Error loading project content.</p>';
+        loader.style.display = 'none';
+        document.getElementById('project-detail-section').style.display = 'block';
+      });
   }
 </script>
