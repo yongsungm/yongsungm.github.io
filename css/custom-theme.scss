@@ -1,5 +1,4 @@
 ---
-# Provide front matter so Jekyll processes this file as SASS.
 ---
 
 /* Custom Color Palette Theme */
@@ -341,9 +340,10 @@ div[class*="bio-"] {
   color: var(--english-violet) !important;
 }
 
-.ui.basic.button.dark-mode-toggle:active {
-  background-color: transparent !important;
-  color: var(--text-primary) !important;
+.ui.basic.button.dark-mode-toggle:active,
+.ui.basic.button.dark-mode-toggle:focus {
+  background-color: var(--cambridge-blue) !important;
+  color: var(--english-violet) !important;
   border: 1px solid var(--border-color) !important;
   box-shadow: none !important;
 }
