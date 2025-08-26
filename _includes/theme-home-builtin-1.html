@@ -120,6 +120,13 @@
   /* Tab content styling */
   #tab-content {
     background-color: transparent !important;
+    display: none;
+    /* Hidden by default when no tabs are active */
+  }
+
+  #tab-content.has-active-tab {
+    display: block;
+    /* Show when a tab is active */
   }
 
   .tab-content {
@@ -191,6 +198,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
+    const tabContainer = document.getElementById('tab-content');
 
     tabButtons.forEach(button => {
       button.addEventListener('click', function () {
@@ -208,9 +216,10 @@
           content.classList.remove('active');
         });
 
-        // Show target tab content
+        // Show target tab content and container
         const targetContent = document.getElementById(targetTab + '-tab');
         if (targetContent) {
+          tabContainer.classList.add('has-active-tab');
           targetContent.style.display = 'block';
           targetContent.classList.add('active');
         }
