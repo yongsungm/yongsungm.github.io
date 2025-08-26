@@ -1,14 +1,20 @@
 ---
+# Provide front matter so Jekyll processes this file as SASS.
 ---
 
 /* Custom Color Palette Theme */
 :root {
-  --chinese-violet: #67597a;   /* Deep purple */
-  --english-violet: #544e61;   /* Darker purple */
-  --slate-gray: #6e8894;       /* Blue-gray */
-  --cambridge-blue: #85baa1;   /* Sage green */
-  --honeydew: #ceeddb;         /* Light mint green */
-  
+  --chinese-violet: #67597a;
+  /* Deep purple */
+  --english-violet: #544e61;
+  /* Darker purple */
+  --slate-gray: #6e8894;
+  /* Blue-gray */
+  --cambridge-blue: #85baa1;
+  /* Sage green */
+  --honeydew: #ceeddb;
+  /* Light mint green */
+
   /* Light mode variables */
   --bg-primary: #f8f9fa;
   --bg-secondary: white;
@@ -63,7 +69,7 @@ body {
   transition: all 0.3s ease !important;
 }
 
-.ui.card > .content > .header {
+.ui.card>.content>.header {
   color: var(--text-primary) !important;
 }
 
@@ -87,6 +93,14 @@ body {
   color: var(--honeydew) !important;
 }
 
+.ui.button:active,
+.ui.button:focus {
+  background-color: var(--cambridge-blue) !important;
+  color: var(--english-violet) !important;
+  border: 1px solid var(--slate-gray) !important;
+  box-shadow: none !important;
+}
+
 .ui.basic.button {
   background-color: transparent !important;
   color: var(--text-primary) !important;
@@ -96,6 +110,14 @@ body {
 .ui.basic.button:hover {
   background-color: var(--cambridge-blue) !important;
   color: var(--english-violet) !important;
+}
+
+.ui.basic.button:active,
+.ui.basic.button:focus {
+  background-color: var(--cambridge-blue) !important;
+  color: var(--english-violet) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: none !important;
 }
 
 /* Labels/Tags */
@@ -112,7 +134,12 @@ body {
 }
 
 /* Headers */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--text-primary) !important;
 }
 
@@ -205,7 +232,7 @@ blockquote {
 }
 
 /* Icons */
-.ui.menu .item > i.icon {
+.ui.menu .item>i.icon {
   color: var(--honeydew) !important;
 }
 
@@ -314,7 +341,6 @@ div[class*="bio-"] {
   color: var(--english-violet) !important;
 }
 
-.ui.basic.button.dark-mode-toggle:focus,
 .ui.basic.button.dark-mode-toggle:active {
   background-color: transparent !important;
   color: var(--text-primary) !important;
@@ -337,11 +363,11 @@ div[class*="bio-"] {
   .ui.menu {
     background-color: var(--english-violet) !important;
   }
-  
+
   .ui.menu .item {
     color: var(--honeydew) !important;
   }
-  
+
   /* Adjust content page containers for mobile */
   .project-page .ui.container,
   .essay-page .ui.container,
@@ -350,14 +376,14 @@ div[class*="bio-"] {
     margin: 10px !important;
     border-radius: 4px !important;
   }
-  
+
   /* Stack homepage buttons on very small screens */
   @media (max-width: 480px) {
     .homepage-buttons-container {
       flex-direction: column !important;
       gap: 10px !important;
     }
-    
+
     .homepage-buttons-container .ui.button {
       width: 100% !important;
       max-width: 200px !important;
