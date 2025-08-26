@@ -40,10 +40,10 @@
         {% include home-network-links.html %}
       </div>
       <div class="center aligned content homepage-buttons-container">
-        <button class="ui basic button" onclick="loadSection('projects')">Projects ({{ num_projects }})</button>
-        <button class="ui basic button" onclick="loadSection('papers')">Papers ({{ num_papers }})</button>
-        <button class="ui basic button" onclick="loadSection('essays')">Essays ({{ num_essays }})</button>
-        <button class="ui basic button" onclick="loadSection('bio')">{{ site.bio-page-label }}</button>
+        <button class="ui basic button tab-button" data-tab="projects">Projects ({{ num_projects }})</button>
+        <button class="ui basic button tab-button" data-tab="papers">Papers ({{ num_papers }})</button>
+        <button class="ui basic button tab-button" data-tab="essays">Essays ({{ num_essays }})</button>
+        <button class="ui basic button tab-button" data-tab="bio">{{ site.bio-page-label }}</button>
         <button class="ui basic button dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
           <span class="theme-text">Light Mode</span> <i class="lightbulb icon"></i>
         </button>
@@ -53,55 +53,77 @@
 
 </div>
 
-<!-- Dynamic content area -->
-<div id="dynamic-content" class="ui container" style="margin-top: 50px; display: none;">
-  <div class="ui segment">
-    <div id="content-loader" class="ui active centered inline loader" style="display: none;"></div>
-    <div id="content-area">
-      <!-- Pre-rendered content sections (hidden by default) -->
-      <div id="projects-section" class="content-section" style="display: none;">
-        <h2 class="ui header">Projects</h2>
-        {% include content-projects.html %}
-      </div>
+<!-- Tab content sections - only one visible at a time -->
+<div id="tab-content" class="ui container" style="margin-top: 40px; min-height: 60vh; padding: 40px 0;">
 
-      <div id="project-detail-section" class="content-section" style="display: none;">
-        <div class="ui basic segment">
-          <button class="ui labeled icon button" onclick="loadSection('projects')">
-            <i class="left arrow icon"></i>
-            Back to Projects
-          </button>
-        </div>
-        <div id="project-detail-content">
-          <!-- Project content will be loaded here -->
-        </div>
-      </div>
+  <section id="projects-tab" class="tab-content" style="display: none;">
+    <h2 class="ui center aligned header">Projects</h2>
+    {% include content-projects.html %}
+  </section>
 
-      <div id="papers-section" class="content-section" style="display: none;">
-        <h2 class="ui header">Papers</h2>
-        {% include content-papers.html %}
-      </div>
+  <section id="papers-tab" class="tab-content" style="display: none;">
+    <h2 class="ui center aligned header">Papers</h2>
+    {% include content-papers.html %}
+  </section>
 
-      <div id="essays-section" class="content-section" style="display: none;">
-        <h2 class="ui header">Essays</h2>
-        {% include content-essays.html %}
-      </div>
+  <section id="essays-tab" class="tab-content" style="display: none;">
+    <h2 class="ui center aligned header">Essays</h2>
+    {% include content-essays.html %}
+  </section>
 
-      <div id="bio-section" class="content-section" style="display: none;">
-        <h2 class="ui header">Resume</h2>
-        {% include content-bio.html %}
-      </div>
-    </div>
-  </div>
+  <section id="bio-tab" class="tab-content" style="display: none;">
+    <h2 class="ui center aligned header">Resume</h2>
+    {% include content-bio.html %}
+  </section>
+
 </div>
 
 <style>
-  /* Smooth transitions for content loading */
-  #dynamic-content {
-    transition: opacity 0.3s ease-in-out;
+  /* Tab navigation styling */
+  .homepage-buttons-container .tab-button {
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
   }
 
-  .content-section {
-    animation: fadeIn 0.4s ease-in-out;
+  .homepage-buttons-container .tab-button:hover {
+    background-color: var(--cambridge-blue) !important;
+    color: var(--english-violet) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px var(--shadow-color);
+  }
+
+  /* Active tab button styling */
+  .homepage-buttons-container .tab-button.active {
+    background-color: var(--cambridge-blue) !important;
+    color: var(--english-violet) !important;
+    font-weight: bold !important;
+  }
+
+  .homepage-buttons-container .tab-button.active:hover {
+    background-color: var(--slate-gray) !important;
+    color: var(--honeydew) !important;
+  }
+
+  /* Dark mode toggle button */
+  .homepage-buttons-container .dark-mode-toggle {
+    cursor: pointer !important;
+    transition: all 0.2s ease;
+  }
+
+  .homepage-buttons-container .dark-mode-toggle:hover {
+    background-color: var(--cambridge-blue) !important;
+    color: var(--english-violet) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px var(--shadow-color);
+  }
+
+  /* Tab content styling */
+  #tab-content {
+    background-color: transparent !important;
+  }
+
+  .tab-content {
+    animation: fadeIn 0.3s ease-in-out;
   }
 
   @keyframes fadeIn {
@@ -116,213 +138,90 @@
     }
   }
 
-  /* Active button styling - with dark mode support */
-  .homepage-buttons-container button.active {
-    background-color: var(--cambridge-blue) !important;
-    color: var(--english-violet) !important;
-  }
-
-  /* Smooth button hover effects */
-  .homepage-buttons-container button {
-    transition: all 0.2s ease;
-  }
-
-  .homepage-buttons-container button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px var(--shadow-color);
-  }
-
-  /* Dynamic content area styling with dark mode support */
-  #dynamic-content {
-    background-color: var(--bg-primary) !important;
-  }
-
-  #dynamic-content .ui.container {
-    background-color: var(--bg-secondary) !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: 8px !important;
-    box-shadow: 0 2px 12px var(--shadow-color) !important;
-    padding: 40px !important;
-  }
-
-  #dynamic-content .ui.segment {
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-  }
-
-  /* Content sections styling */
-  .content-section {
-    background-color: transparent !important;
-  }
-
-  .content-section .ui.header {
+  .tab-content .ui.header {
     color: var(--text-primary) !important;
     margin-bottom: 30px !important;
   }
 
-  /* Ensure all cards in dynamic content inherit theme */
-  #dynamic-content .ui.card {
+  /* Ensure all cards in tab content inherit theme */
+  .tab-content .ui.card {
     background-color: var(--bg-secondary) !important;
     border: 1px solid var(--border-color) !important;
     box-shadow: 0 2px 8px var(--shadow-color) !important;
   }
 
-  #dynamic-content .ui.card .header {
+  .tab-content .ui.card .header {
     color: var(--text-primary) !important;
   }
 
-  #dynamic-content .ui.card .meta {
+  .tab-content .ui.card .meta {
     color: var(--text-secondary) !important;
   }
 
-  #dynamic-content .ui.card .description {
+  .tab-content .ui.card .description {
     color: var(--text-primary) !important;
   }
 
-  /* Buttons in dynamic content */
-  #dynamic-content .ui.button {
+  /* Buttons in tab content */
+  .tab-content .ui.button {
     background-color: var(--cambridge-blue) !important;
     color: var(--english-violet) !important;
     border: 1px solid var(--slate-gray) !important;
   }
 
-  #dynamic-content .ui.button:hover {
+  .tab-content .ui.button:hover {
     background-color: var(--slate-gray) !important;
     color: var(--honeydew) !important;
   }
 
-  #dynamic-content .ui.basic.button {
+  .tab-content .ui.basic.button {
     background-color: transparent !important;
     color: var(--text-primary) !important;
     border: 1px solid var(--border-color) !important;
   }
 
-  #dynamic-content .ui.basic.button:hover {
+  .tab-content .ui.basic.button:hover {
     background-color: var(--cambridge-blue) !important;
     color: var(--english-violet) !important;
   }
 </style>
 
 <script>
-  // Content loading functionality
-  let currentSection = 'home';
-
-  function loadSection(section) {
-    const contentArea = document.getElementById('dynamic-content');
-    const loader = document.getElementById('content-loader');
-
-    // Update button states and URL
-    updateButtonStates(section);
-    updateURL(section);
-
-    if (section === 'home') {
-      contentArea.style.display = 'none';
-      currentSection = 'home';
-      // Smooth scroll to top
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-
-    // Show loading state
-    contentArea.style.display = 'block';
-    loader.style.display = 'block';
-
-    // Hide all content sections
-    const allSections = document.querySelectorAll('.content-section');
-    allSections.forEach(s => s.style.display = 'none');
-
-    // Simulate loading and then show content
-    setTimeout(() => {
-      loader.style.display = 'none';
-      const targetSection = document.getElementById(section + '-section');
-      if (targetSection) {
-        targetSection.style.display = 'block';
-      }
-      currentSection = section;
-
-      // Smooth scroll to content area
-      contentArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 300);
-  }
-
-  function updateButtonStates(activeSection) {
-    const buttons = document.querySelectorAll('.homepage-buttons-container button:not(.dark-mode-toggle)');
-    buttons.forEach(button => {
-      button.classList.remove('active');
-    });
-
-    if (activeSection !== 'home') {
-      const activeButton = document.querySelector(`button[onclick="loadSection('${activeSection}')"]`);
-      if (activeButton) {
-        activeButton.classList.add('active');
-      }
-    }
-  }
-
-  // Initialize on page load
+  // Tab navigation functionality
   document.addEventListener('DOMContentLoaded', function () {
-    // Check if there's a hash in the URL to load a specific section
-    const hash = window.location.hash.substring(1);
-    if (hash && ['projects', 'papers', 'essays', 'bio'].includes(hash)) {
-      loadSection(hash);
-    } else {
-      currentSection = 'home';
-    }
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const targetTab = this.getAttribute('data-tab');
+
+        // Remove active class from all buttons
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+
+        // Add active class to clicked button
+        this.classList.add('active');
+
+        // Hide all tab contents
+        tabContents.forEach(content => {
+          content.style.display = 'none';
+          content.classList.remove('active');
+        });
+
+        // Show target tab content
+        const targetContent = document.getElementById(targetTab + '-tab');
+        if (targetContent) {
+          targetContent.style.display = 'block';
+          targetContent.classList.add('active');
+        }
+      });
+    });
   });
 
-  // Update URL hash when section changes
-  function updateURL(section) {
-    if (section === 'home') {
-      history.replaceState(null, null, window.location.pathname);
-    } else {
-      history.replaceState(null, null, '#' + section);
-    }
-  }
-
-  // Load individual project content
+  // Simple project loading for individual project pages
   function loadProject(projectUrl, projectTitle) {
-    const contentArea = document.getElementById('dynamic-content');
-    const loader = document.getElementById('content-loader');
-    const projectDetailContent = document.getElementById('project-detail-content');
-
-    // Show loading state
-    contentArea.style.display = 'block';
-    loader.style.display = 'block';
-
-    // Hide all content sections
-    const allSections = document.querySelectorAll('.content-section');
-    allSections.forEach(s => s.style.display = 'none');
-
-    // Fetch project content
-    fetch('{{ site.baseurl }}' + projectUrl)
-      .then(response => response.text())
-      .then(html => {
-        // Extract content from the fetched page
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const content = doc.querySelector('.ui.text.container') || doc.querySelector('.ui.container') || doc.querySelector('main');
-        
-        if (content) {
-          projectDetailContent.innerHTML = '<h2 class="ui header">' + projectTitle + '</h2>' + content.innerHTML;
-        } else {
-          projectDetailContent.innerHTML = '<h2 class="ui header">' + projectTitle + '</h2><p>Content could not be loaded.</p>';
-        }
-
-        // Show project detail section
-        loader.style.display = 'none';
-        document.getElementById('project-detail-section').style.display = 'block';
-        currentSection = 'project-detail';
-
-        // Smooth scroll to content area
-        contentArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      })
-      .catch(error => {
-        console.error('Error loading project:', error);
-        projectDetailContent.innerHTML = '<h2 class="ui header">' + projectTitle + '</h2><p>Error loading project content.</p>';
-        loader.style.display = 'none';
-        document.getElementById('project-detail-section').style.display = 'block';
-      });
+    // For now, just navigate to the project page
+    // This can be enhanced later if needed
+    window.location.href = '{{ site.baseurl }}' + projectUrl;
   }
 </script>
