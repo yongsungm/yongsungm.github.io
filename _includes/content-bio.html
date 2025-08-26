@@ -1,25 +1,16 @@
-<!-- Dynamic Bio Content -->
-<div class="ui stackable grid container">
-  <div class="sixteen wide column no-bottom">
-    <h2 class="ui center aligned header no-bottom">{{ site.data.bio.basics.name }}</h2>
+<!-- PDF Resume Display -->
+<div class="ui container">
+  <div class="ui segment">
+    <embed src="{{ site.baseurl }}/YS_Masuda_Resume.pdf" type="application/pdf" width="100%" height="800px" />
+    <div class="ui center aligned basic segment">
+      <p><em>If the PDF doesn't display above, <a href="{{ site.baseurl }}/YS_Masuda_Resume.pdf" target="_blank">click here to view it directly</a>.</em></p>
+    </div>
   </div>
-
-  <div class="eight wide left aligned column">
-    {% include bio-network-links.html %}
+  
+  <div class="ui center aligned basic segment">
+    <div class="ui large button" onclick="window.open('{{ site.baseurl }}/YS_Masuda_Resume.pdf', '_blank')">
+      <i class="download icon"></i>
+      Download PDF Resume
+    </div>
   </div>
-
-  <div class="eight wide right aligned column">
-    {% include bio-address.html %}
-  </div>
-</div>
-
-<div style="margin-bottom: 20px" class="ui stackable grid container">
-  {% include bio-interests-1.html %}
-  {% include bio-skills-1.html %}
-  {% include bio-education-1.html %}
-  {% include bio-work-1.html %}
-  {% include bio-volunteer-1.html %}
-  {% include bio-publications-1.html %}
-  {% include bio-awards-1.html %}
-  {% include bio-references-1.html %}
 </div>
