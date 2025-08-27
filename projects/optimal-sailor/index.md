@@ -17,7 +17,7 @@ labels:
 summary: GUI application for sailboat navigation using weather data
 ---
 
-<img class="ui image" src="{{ site.baseurl }}/projects/optimal-sailor/images/poster.png"/>
+<img class="ui image" src="/projects/optimal-sailor/images/poster.png"/>
 <h2>
 Contributions
 </h2>

@@ -7,7 +7,7 @@
 {% assign num_papers = paper_pages.size %}
 {% assign num_projects = project_pages.size %}
 
-<div style="height: 100%; margin-top: -75px; margin-bottom: 0px" class="ui middle aligned grid main-card-container">
+<div style="height: 100%; margin-top: -75px; margin-bottom: -200px" class="ui middle aligned grid main-card-container">
 
   <div class="column">
 
@@ -65,40 +65,28 @@
     {% for page in project_pages %}
     {% unless page.draft %}
     <div id="project-{{ page.title | slugify }}" class="project-content" style="display: none;">
-      <div class="ui container">
+      <div class="project-detail-container">
         <div class="ui basic button back-to-projects" onclick="showProjectsList()">
           <i class="arrow left icon"></i> Back to Projects
         </div>
-        <h2 class="ui center aligned header">{{ page.title }}</h2>
-        <div class="ui centered card project-detail-card">
-          {% if page.image %}
-          <div class="image">
-            <img src="{{ site.baseurl }}/{{ page.image }}">
+        <div class="project-detail-header">
+          <h2 class="ui center aligned header">{{ page.title }}</h2>
+          <div class="project-meta">
+            <span class="date">{{ page.date | date: "%B %d, %Y" }}</span>
           </div>
-          {% endif %}
-          <div class="content">
-            <div class="meta">
-              <span class="date">{{ page.date | date: "%B %d, %Y" }}</span>
-            </div>
-            <div class="description">
-              {{ page.content }}
-            </div>
-          </div>
-          <div class="extra content">
-            <div class="ui labels">
-              {% for label in page.labels %}
-              <div class="ui label">{{ label }}</div>
-              {% endfor %}
-            </div>
-          </div>
-          {% if page.projecturl %}
-          <div class="extra content">
-            <a class="ui button" href="{{ page.projecturl }}" target="_blank">
-              <i class="external link icon"></i> View Project
-            </a>
-          </div>
-          {% endif %}
         </div>
+
+        <div class="project-content-body">
+          {{ page.content }}
+        </div>
+
+        {% if page.projecturl %}
+        <div class="project-actions">
+          <a class="ui button" href="{{ page.projecturl }}" target="_blank">
+            <i class="external link icon"></i> View Project
+          </a>
+        </div>
+        {% endif %}
       </div>
     </div>
     {% endunless %}
@@ -241,20 +229,77 @@
   .project-content {
     animation: fadeIn 0.3s ease-in-out;
     padding: 20px 0;
+    width: 100% !important;
   }
 
-  .project-detail-card {
-    max-width: 800px !important;
-    margin: 20px auto !important;
+  .project-detail-container {
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    background-color: var(--bg-secondary) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px var(--shadow-color) !important;
   }
 
-  .project-detail-card .content {
+  .project-detail-header {
+    text-align: center !important;
+    padding: 30px 0 20px 0 !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    margin-bottom: 30px !important;
+  }
+
+  .project-meta {
+    margin-top: 15px !important;
+  }
+
+  .project-meta .date {
+    color: var(--text-secondary) !important;
+    font-size: 1.1em !important;
+    display: block !important;
+  }
+
+  .project-content-body {
+    line-height: 1.7 !important;
+    font-size: 1.1em !important;
+    color: var(--text-primary) !important;
+    padding: 0 20px !important;
     text-align: left !important;
   }
 
-  .project-detail-card .description {
-    line-height: 1.6 !important;
-    margin-top: 15px !important;
+  .project-content-body h2 {
+    color: var(--text-primary) !important;
+    margin-top: 40px !important;
+    margin-bottom: 20px !important;
+    border-bottom: 2px solid var(--cambridge-blue) !important;
+    padding-bottom: 10px !important;
+  }
+
+  .project-content-body p {
+    margin-bottom: 20px !important;
+  }
+
+  .project-content-body img {
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 20px 0 !important;
+    border-radius: 4px !important;
+    box-shadow: 0 2px 8px var(--shadow-color) !important;
+  }
+
+  .project-content-body pre {
+    background-color: var(--bg-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 4px !important;
+    padding: 15px !important;
+    overflow-x: auto !important;
+    margin: 20px 0 !important;
+  }
+
+  .project-actions {
+    text-align: center !important;
+    padding: 30px 0 !important;
+    border-top: 1px solid var(--border-color) !important;
+    margin-top: 40px !important;
   }
 
   .back-to-projects {
@@ -264,6 +309,19 @@
 
   .back-to-projects:hover {
     transform: translateX(-3px) !important;
+  }
+
+  /* Responsive adjustments for project content */
+  @media (max-width: 768px) {
+    .project-detail-container {
+      margin: 0 10px !important;
+      padding: 0 15px !important;
+    }
+
+    .project-content-body {
+      padding: 0 10px !important;
+      font-size: 1em !important;
+    }
   }
 </style>
 

@@ -21,7 +21,7 @@ summary: A web application to connect UH students with similar commutes.
 The purpose of this application is to make it easy for students attending the University of Hawaii at Manoa to organize carpools. The way it works is users create a profile including their name, photo, address, commuting schedule, and other optional fields. Then on the main page, they can view the approximate locations of the other users on a map, and filter these users based on day, commute times, and whether they are a driver. When a potential car-pooler or "buddy" is found, the user can send them a message for coordination purposes. Users can also create group messages to organize a larger pool.
 <br/>
 
-<img class="ui image" src="{{ site.baseurl }}/projects/warrior-ride-buddies/images/map.png"/>
+<img class="ui image" src="/projects/warrior-ride-buddies/images/map.png"/>
 <h2>
 Contributions
 </h2>
@@ -44,7 +44,7 @@ Designed and created the pages for viewing messages and reports
 Created the form for making new user profiles
 </li>
 <br/>
-<img class="ui image" src="{{ site.baseurl }}/projects/warrior-ride-buddies/images/group_message.png"/>
+<img class="ui image" src="/projects/warrior-ride-buddies/images/group_message.png"/>
 <br/>
 <h2>
 Takeaways

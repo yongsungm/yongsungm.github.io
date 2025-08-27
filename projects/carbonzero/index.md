@@ -19,13 +19,13 @@ summary: A sustainability application to gamify Earth-friendly habits
 The purpose of this application is to provide users with a fun way to improve the sustainability of their lifestyle. CarbonZero helps to foster an environmentally-conscious community by allowing users to share sustainability-related challenges and organize volunteer opportunities which can be completed in order to gain individual points as well as to improve their neighborhood's sustainability score. Accumulating points enables users to level-up their profile as well as purchase digital badges as well as sponsor-provided incentives.
 <br/>
 
-<img class="ui image" src="{{ site.baseurl }}/projects/carbonzero/images/LandingPage.png"/><br/>
-<img class="ui image" src="{{ site.baseurl }}/projects/carbonzero/images/HomePage.png"/><br/>
-<img class="ui image" src="{{ site.baseurl }}/projects/carbonzero/images/NeighborhoodPage.png"/><br/>
-<img class="ui image" src="{{ site.baseurl }}/projects/carbonzero/images/MapPage.png"/><br/>
-<img class="ui image" src="{{ site.baseurl }}/projects/carbonzero/images/ListGoalsPage.png"/><br/>
-<img class="ui image" src="{{ site.baseurl }}/projects/carbonzero/images/Store.png"/><br/>
-<img class="ui image" src="{{ site.baseurl }}/projects/carbonzero/images/ProfilePage.png"/><br/>
+<img class="ui image" src="/projects/carbonzero/images/LandingPage.png"/><br/>
+<img class="ui image" src="/projects/carbonzero/images/HomePage.png"/><br/>
+<img class="ui image" src="/projects/carbonzero/images/NeighborhoodPage.png"/><br/>
+<img class="ui image" src="/projects/carbonzero/images/MapPage.png"/><br/>
+<img class="ui image" src="/projects/carbonzero/images/ListGoalsPage.png"/><br/>
+<img class="ui image" src="/projects/carbonzero/images/Store.png"/><br/>
+<img class="ui image" src="/projects/carbonzero/images/ProfilePage.png"/><br/>
 
 
 <h2>
