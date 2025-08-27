@@ -123,10 +123,31 @@
   <section id="essays-tab" class="tab-content" style="display: none;">
     <h2 class="ui center aligned header">Essays</h2>
     {% include content-essays.html %}
+
+    <!-- Individual essay content sections -->
+    {% assign essay_pages = site.pages | where: "type", "essay" | sort: "date" | reverse %}
+    {% for page in essay_pages %}
+    {% unless page.draft %}
+    <div id="essay-{{ page.title | slugify }}" class="essay-content" style="display: none;">
+      <div class="ui basic button back-to-essays" onclick="showEssaysList()">
+        <i class="arrow left icon"></i> Back to Essays
+      </div>
+      <div class="project-detail-header">
+        <h2 class="ui center aligned header">{{ page.title }}</h2>
+        <div class="project-meta">
+          <span class="date">{{ page.date | date: "%B %d, %Y" }}</span>
+        </div>
+      </div>
+
+      <div class="project-content-body">
+        {{ page.content }}
+      </div>
+    </div>
+    {% endunless %}
+    {% endfor %}
   </section>
 
   <section id="bio-tab" class="tab-content" style="display: none;">
-    <h2 class="ui center aligned header">Resume</h2>
     {% include content-bio.html %}
   </section>
 
@@ -379,6 +400,22 @@
       height: 400px !important;
     }
   }
+
+  /* Essay content styling - reuse project styles */
+  .essay-content {
+    animation: fadeIn 0.3s ease-in-out;
+    padding: 20px 0;
+    width: 100% !important;
+  }
+
+  .back-to-essays {
+    margin-bottom: 20px !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .back-to-essays:hover {
+    transform: translateX(-3px) !important;
+  }
 </style>
 
 <script>
@@ -499,5 +536,48 @@
 
     if (papersList) papersList.style.display = 'flex';
     if (papersHeader) papersHeader.style.display = 'block';
+  }
+
+  // Essay content display functionality
+  function loadEssay(essayUrl, essayTitle) {
+    // Convert title to slug format for ID matching
+    const essaySlug = essayTitle.toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim();
+
+    const essayContentId = 'essay-' + essaySlug;
+    const essayContent = document.getElementById(essayContentId);
+
+    if (essayContent) {
+      // Hide the essays list
+      const essaysList = document.querySelector('#essays-tab .ui.cards');
+      const essaysHeader = document.querySelector('#essays-tab h2');
+
+      if (essaysList) essaysList.style.display = 'none';
+      if (essaysHeader) essaysHeader.style.display = 'none';
+
+      // Show the individual essay content
+      essayContent.style.display = 'block';
+    } else {
+      // Fallback to navigation if content section not found
+      window.location.href = '{{ site.baseurl }}' + essayUrl;
+    }
+  }
+
+  function showEssaysList() {
+    // Hide all essay content sections
+    const essayContents = document.querySelectorAll('.essay-content');
+    essayContents.forEach(content => {
+      content.style.display = 'none';
+    });
+
+    // Show the essays list
+    const essaysList = document.querySelector('#essays-tab .ui.cards');
+    const essaysHeader = document.querySelector('#essays-tab h2');
+
+    if (essaysList) essaysList.style.display = 'flex';
+    if (essaysHeader) essaysHeader.style.display = 'block';
   }
 </script>

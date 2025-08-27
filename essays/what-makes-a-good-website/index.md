@@ -13,7 +13,7 @@ labels:
 ---
 
 <h2>Adobe Flash.</h2>
-<p><img class="ui medium right floated rounded image" src="{{ site.baseurl }}/essays/what-makes-a-good-website/images/animator_vs_animation.png" /></p>
+<p><img class="ui medium right floated rounded image" src="/essays/what-makes-a-good-website/images/animator_vs_animation.png" /></p>
 <p>
 Adobe ended its development of flash at the end of 2020, resulting in the discontinuation of browser support for all Flash plug-ins. 
 In my early days of browsing the internet circa 2003, I'd spend most of my computer time playing online flash games or watching Flash
