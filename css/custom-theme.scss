@@ -338,14 +338,34 @@ div[class*="bio-"] {
 .ui.basic.button.dark-mode-toggle:hover {
   background-color: var(--cambridge-blue) !important;
   color: var(--english-violet) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 8px var(--shadow-color) !important;
 }
 
-.ui.basic.button.dark-mode-toggle:active,
 .ui.basic.button.dark-mode-toggle:focus {
-  background-color: var(--cambridge-blue) !important;
-  color: var(--english-violet) !important;
+  background-color: transparent !important;
+  color: var(--text-primary) !important;
   border: 1px solid var(--border-color) !important;
   box-shadow: none !important;
+  outline: none !important;
+  transform: none !important;
+}
+
+.ui.basic.button.dark-mode-toggle:active {
+  background-color: transparent !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: none !important;
+  outline: none !important;
+  transform: none !important;
+}
+
+/* Ensure hover still works even when button has focus */
+.ui.basic.button.dark-mode-toggle:focus:hover {
+  background-color: var(--cambridge-blue) !important;
+  color: var(--english-violet) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 8px var(--shadow-color) !important;
 }
 
 /* Homepage buttons layout - keep it simple */

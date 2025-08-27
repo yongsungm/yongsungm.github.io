@@ -69,6 +69,8 @@
         // Remove focus from the button to prevent highlighting
         if (event && event.target) {
             event.target.blur();
+            // Ensure no active class is accidentally applied
+            event.target.classList.remove('active');
         }
 
         // Add a subtle animation effect

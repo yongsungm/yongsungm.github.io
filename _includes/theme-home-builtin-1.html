@@ -192,6 +192,31 @@
     box-shadow: 0 2px 8px var(--shadow-color);
   }
 
+  /* Prevent dark mode toggle from staying highlighted after click */
+  .homepage-buttons-container .dark-mode-toggle:focus {
+    background-color: transparent !important;
+    color: inherit !important;
+    transform: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .homepage-buttons-container .dark-mode-toggle:active {
+    background-color: transparent !important;
+    color: inherit !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Ensure dark mode toggle never gets the active class styling */
+  .homepage-buttons-container .dark-mode-toggle.active {
+    background-color: transparent !important;
+    color: inherit !important;
+    font-weight: normal !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
   /* Tab content styling */
   #tab-content {
     background-color: transparent !important;
@@ -429,7 +454,7 @@
       button.addEventListener('click', function () {
         const targetTab = this.getAttribute('data-tab');
 
-        // Remove active class from all buttons
+        // Remove active class from all tab buttons (excluding dark mode toggle)
         tabButtons.forEach(btn => btn.classList.remove('active'));
 
         // Add active class to clicked button
