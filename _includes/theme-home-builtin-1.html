@@ -7,7 +7,7 @@
 {% assign num_papers = paper_pages.size %}
 {% assign num_projects = project_pages.size %}
 
-<div style="height: 100%; margin-top: -75px" class="ui middle aligned grid ">
+<div style="height: 100%; margin-top: -75px; margin-bottom: 0px" class="ui middle aligned grid main-card-container">
 
   <div class="column">
 
@@ -54,11 +54,55 @@
 </div>
 
 <!-- Tab content sections - only one visible at a time -->
-<div id="tab-content" class="ui container" style="margin-top: 40px; min-height: 60vh; padding: 40px 0;">
+<div id="tab-content" class="ui container tab-content-container">
 
   <section id="projects-tab" class="tab-content" style="display: none;">
     <h2 class="ui center aligned header">Projects</h2>
     {% include content-projects.html %}
+
+    <!-- Individual project content sections -->
+    {% assign project_pages = site.pages | where: "type", "project" | sort: "date" | reverse %}
+    {% for page in project_pages %}
+    {% unless page.draft %}
+    <div id="project-{{ page.title | slugify }}" class="project-content" style="display: none;">
+      <div class="ui container">
+        <div class="ui basic button back-to-projects" onclick="showProjectsList()">
+          <i class="arrow left icon"></i> Back to Projects
+        </div>
+        <h2 class="ui center aligned header">{{ page.title }}</h2>
+        <div class="ui centered card project-detail-card">
+          {% if page.image %}
+          <div class="image">
+            <img src="{{ site.baseurl }}/{{ page.image }}">
+          </div>
+          {% endif %}
+          <div class="content">
+            <div class="meta">
+              <span class="date">{{ page.date | date: "%B %d, %Y" }}</span>
+            </div>
+            <div class="description">
+              {{ page.content }}
+            </div>
+          </div>
+          <div class="extra content">
+            <div class="ui labels">
+              {% for label in page.labels %}
+              <div class="ui label">{{ label }}</div>
+              {% endfor %}
+            </div>
+          </div>
+          {% if page.projecturl %}
+          <div class="extra content">
+            <a class="ui button" href="{{ page.projecturl }}" target="_blank">
+              <i class="external link icon"></i> View Project
+            </a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endunless %}
+    {% endfor %}
   </section>
 
   <section id="papers-tab" class="tab-content" style="display: none;">
@@ -148,6 +192,7 @@
   .tab-content .ui.header {
     color: var(--text-primary) !important;
     margin-bottom: 30px !important;
+    margin-top: 0px !important;
   }
 
   /* Ensure all cards in tab content inherit theme */
@@ -191,6 +236,35 @@
     background-color: var(--cambridge-blue) !important;
     color: var(--english-violet) !important;
   }
+
+  /* Project content styling */
+  .project-content {
+    animation: fadeIn 0.3s ease-in-out;
+    padding: 20px 0;
+  }
+
+  .project-detail-card {
+    max-width: 800px !important;
+    margin: 20px auto !important;
+  }
+
+  .project-detail-card .content {
+    text-align: left !important;
+  }
+
+  .project-detail-card .description {
+    line-height: 1.6 !important;
+    margin-top: 15px !important;
+  }
+
+  .back-to-projects {
+    margin-bottom: 20px !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .back-to-projects:hover {
+    transform: translateX(-3px) !important;
+  }
 </style>
 
 <script>
@@ -227,10 +301,46 @@
     });
   });
 
-  // Simple project loading for individual project pages
+  // Project content display functionality
   function loadProject(projectUrl, projectTitle) {
-    // For now, just navigate to the project page
-    // This can be enhanced later if needed
-    window.location.href = '{{ site.baseurl }}' + projectUrl;
+    // Convert title to slug format for ID matching
+    const projectSlug = projectTitle.toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim();
+
+    const projectContentId = 'project-' + projectSlug;
+    const projectContent = document.getElementById(projectContentId);
+
+    if (projectContent) {
+      // Hide the projects list
+      const projectsList = document.querySelector('#projects-tab .ui.cards');
+      const projectsHeader = document.querySelector('#projects-tab h2');
+
+      if (projectsList) projectsList.style.display = 'none';
+      if (projectsHeader) projectsHeader.style.display = 'none';
+
+      // Show the individual project content
+      projectContent.style.display = 'block';
+    } else {
+      // Fallback to navigation if content section not found
+      window.location.href = '{{ site.baseurl }}' + projectUrl;
+    }
+  }
+
+  function showProjectsList() {
+    // Hide all project content sections
+    const projectContents = document.querySelectorAll('.project-content');
+    projectContents.forEach(content => {
+      content.style.display = 'none';
+    });
+
+    // Show the projects list
+    const projectsList = document.querySelector('#projects-tab .ui.cards');
+    const projectsHeader = document.querySelector('#projects-tab h2');
+
+    if (projectsList) projectsList.style.display = 'flex';
+    if (projectsHeader) projectsHeader.style.display = 'block';
   }
 </script>

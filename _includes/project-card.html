@@ -24,8 +24,8 @@
       {% endfor %}
     </div>
   </div>
-    {% if page.projecturl %}
-      <a class="ui bottom attached button" href="{{ page.projecturl }}">Read More</a>
+    {% if include.page.projecturl %}
+      <a class="ui bottom attached button" href="{{ include.page.projecturl }}">Read More</a>
     {% else %}
       <button class="ui bottom attached button" onclick="loadProject('{{ include.page.url }}', '{{ include.page.title | escape }}')">Read More</button>
     {% endif %}
