@@ -167,16 +167,29 @@
     box-shadow: 0 2px 8px var(--shadow-color);
   }
 
-  /* Active tab button styling */
+  /* Active tab button styling - ensure it's always visible in both themes */
   .homepage-buttons-container .tab-button.active {
     background-color: var(--cambridge-blue) !important;
     color: var(--english-violet) !important;
     font-weight: bold !important;
+    border: 2px solid var(--slate-gray) !important;
+    box-shadow: 0 0 0 1px var(--cambridge-blue) !important;
   }
 
   .homepage-buttons-container .tab-button.active:hover {
     background-color: var(--slate-gray) !important;
     color: var(--honeydew) !important;
+    border: 2px solid var(--cambridge-blue) !important;
+  }
+
+  /* Ensure active state is preserved during theme transitions */
+  [data-theme="dark"] .homepage-buttons-container .tab-button.active,
+  [data-theme="light"] .homepage-buttons-container .tab-button.active {
+    background-color: var(--cambridge-blue) !important;
+    color: var(--english-violet) !important;
+    font-weight: bold !important;
+    border: 2px solid var(--slate-gray) !important;
+    box-shadow: 0 0 0 1px var(--cambridge-blue) !important;
   }
 
   /* Dark mode toggle button */
