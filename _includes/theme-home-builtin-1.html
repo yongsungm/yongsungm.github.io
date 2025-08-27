@@ -7,7 +7,7 @@
 {% assign num_papers = paper_pages.size %}
 {% assign num_projects = project_pages.size %}
 
-<div style="height: 100%; margin-top: -75px; margin-bottom: -200px" class="ui middle aligned grid main-card-container">
+<div style="height: 100%; margin-top: -75px; margin-bottom: -100px" class="ui middle aligned grid main-card-container">
 
   <div class="column">
 
@@ -154,32 +154,61 @@
 </div>
 
 <style>
-  /* Tab navigation styling */
+  /* Tab navigation styling - similar to dark mode toggle but with persistent active state */
   .homepage-buttons-container .tab-button {
-    transition: all 0.3s ease !important;
+    transition: all 0.2s ease !important;
     cursor: pointer !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
   }
 
   .homepage-buttons-container .tab-button:hover {
     background-color: var(--cambridge-blue) !important;
     color: var(--english-violet) !important;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px var(--shadow-color);
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 8px var(--shadow-color) !important;
   }
 
-  /* Active tab button styling - ensure it's always visible in both themes */
+  /* Focus and active states - reset immediately after click like dark mode toggle */
+  .homepage-buttons-container .tab-button:focus:not(.active) {
+    background-color: transparent !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: none !important;
+    outline: none !important;
+    transform: none !important;
+  }
+
+  .homepage-buttons-container .tab-button:active:not(.active) {
+    background-color: transparent !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  /* Active tab button styling - persistent highlighting */
   .homepage-buttons-container .tab-button.active {
     background-color: var(--cambridge-blue) !important;
     color: var(--english-violet) !important;
     font-weight: bold !important;
-    border: 2px solid var(--slate-gray) !important;
+    border: 1px solid var(--slate-gray) !important;
     box-shadow: 0 0 0 1px var(--cambridge-blue) !important;
   }
 
   .homepage-buttons-container .tab-button.active:hover {
     background-color: var(--slate-gray) !important;
     color: var(--honeydew) !important;
-    border: 2px solid var(--cambridge-blue) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 8px var(--shadow-color) !important;
+  }
+
+  /* Ensure hover works even when active button has focus */
+  .homepage-buttons-container .tab-button.active:focus:hover {
+    background-color: var(--slate-gray) !important;
+    color: var(--honeydew) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 8px var(--shadow-color) !important;
   }
 
   /* Ensure active state is preserved during theme transitions */
@@ -192,10 +221,14 @@
     box-shadow: 0 0 0 1px var(--cambridge-blue) !important;
   }
 
-  /* Dark mode toggle button */
+  /* Dark mode toggle button - consistent dimensions */
   .homepage-buttons-container .dark-mode-toggle {
     cursor: pointer !important;
     transition: all 0.2s ease;
+    border: 2px solid transparent !important;
+    box-sizing: border-box !important;
+    min-width: 120px !important;
+    padding: 8px 12px !important;
   }
 
   .homepage-buttons-container .dark-mode-toggle:hover {
@@ -472,6 +505,9 @@
 
         // Add active class to clicked button
         this.classList.add('active');
+
+        // Blur the button to prevent focus styling (like dark mode toggle)
+        this.blur();
 
         // Hide all tab contents
         tabContents.forEach(content => {

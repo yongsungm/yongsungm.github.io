@@ -71,7 +71,7 @@
             // Capture the active tab button BEFORE any changes
             const activeTabButton = document.querySelector('.tab-button.active');
             const activeTabData = activeTabButton ? activeTabButton.getAttribute('data-tab') : null;
-            
+
             event.target.blur();
             // Ensure no active class is accidentally applied to dark mode toggle
             event.target.classList.remove('active');
@@ -80,7 +80,7 @@
             if (activeTabButton && activeTabData) {
                 // Immediate preservation
                 activeTabButton.classList.add('active');
-                
+
                 // Multiple setTimeout fallbacks to ensure it sticks
                 setTimeout(() => {
                     const currentActive = document.querySelector('.tab-button.active');
@@ -88,14 +88,14 @@
                         activeTabButton.classList.add('active');
                     }
                 }, 0);
-                
+
                 setTimeout(() => {
                     const currentActive = document.querySelector('.tab-button.active');
                     if (!currentActive || currentActive.getAttribute('data-tab') !== activeTabData) {
                         activeTabButton.classList.add('active');
                     }
                 }, 50);
-                
+
                 setTimeout(() => {
                     const currentActive = document.querySelector('.tab-button.active');
                     if (!currentActive || currentActive.getAttribute('data-tab') !== activeTabData) {
