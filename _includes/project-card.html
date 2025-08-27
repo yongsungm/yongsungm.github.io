@@ -2,9 +2,9 @@
 
 <div class="card">
   {% if include.page.image %}
-    <div class="image">
-      <img src="{{ site.baseurl }}/{{ include.page.image }}">
-    </div>
+  <div class="image">
+    <img src="{{ site.baseurl }}/{{ include.page.image }}">
+  </div>
   {% endif %}
   <div class="content">
     <span class="header">{{ include.page.title }}</span>
@@ -20,14 +20,11 @@
   <div class="extra content">
     <div class="ui mini labels">
       {% for label in include.page.labels %}
-        <div class="ui basic label">{{ label }}</div>
+      <div class="ui basic label">{{ label }}</div>
       {% endfor %}
     </div>
   </div>
-    {% if include.page.projecturl %}
-      <a class="ui bottom attached button" href="{{ include.page.projecturl }}">Read More</a>
-    {% else %}
-      <button class="ui bottom attached button" onclick="loadProject('{{ include.page.url }}', '{{ include.page.title | escape }}')">Read More</button>
-    {% endif %}
+  <button class="ui bottom attached button"
+    onclick="loadProject('{{ include.page.url }}', '{{ include.page.title | escape }}')">Read More</button>
 
 </div>
