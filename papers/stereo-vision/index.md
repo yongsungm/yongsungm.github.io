@@ -15,7 +15,7 @@ summary: Implementation and comparative analysis of stereo vision systems for au
 ---
 
 <div class="pdf-container">
-  <iframe src="{{ site.baseurl }}/papers/stereo-vision/Stereo_Vision.pdf"></iframe>
+  <iframe src="/papers/stereo-vision/Stereo_Vision.pdf"></iframe>
 </div>
 
 <div class="ui center aligned basic segment">

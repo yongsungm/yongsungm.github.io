@@ -65,29 +65,27 @@
     {% for page in project_pages %}
     {% unless page.draft %}
     <div id="project-{{ page.title | slugify }}" class="project-content" style="display: none;">
-      <div class="project-detail-container">
-        <div class="ui basic button back-to-projects" onclick="showProjectsList()">
-          <i class="arrow left icon"></i> Back to Projects
-        </div>
-        <div class="project-detail-header">
-          <h2 class="ui center aligned header">{{ page.title }}</h2>
-          <div class="project-meta">
-            <span class="date">{{ page.date | date: "%B %d, %Y" }}</span>
-          </div>
-        </div>
-
-        <div class="project-content-body">
-          {{ page.content }}
-        </div>
-
-        {% if page.projecturl %}
-        <div class="project-actions">
-          <a class="ui button" href="{{ page.projecturl }}" target="_blank">
-            <i class="external link icon"></i> View Project
-          </a>
-        </div>
-        {% endif %}
+      <div class="ui basic button back-to-projects" onclick="showProjectsList()">
+        <i class="arrow left icon"></i> Back to Projects
       </div>
+      <div class="project-detail-header">
+        <h2 class="ui center aligned header">{{ page.title }}</h2>
+        <div class="project-meta">
+          <span class="date">{{ page.date | date: "%B %d, %Y" }}</span>
+        </div>
+      </div>
+
+      <div class="project-content-body">
+        {{ page.content }}
+      </div>
+
+      {% if page.projecturl %}
+      <div class="project-actions">
+        <a class="ui button" href="{{ page.projecturl }}" target="_blank">
+          <i class="external link icon"></i> View Project
+        </a>
+      </div>
+      {% endif %}
     </div>
     {% endunless %}
     {% endfor %}
@@ -96,6 +94,30 @@
   <section id="papers-tab" class="tab-content" style="display: none;">
     <h2 class="ui center aligned header">Papers</h2>
     {% include content-papers.html %}
+
+    <!-- Individual paper content sections -->
+    {% assign paper_pages = site.pages | where: "type", "paper" | sort: "date" | reverse %}
+    {% for page in paper_pages %}
+    {% unless page.draft %}
+    <div id="paper-{{ page.title | slugify }}" class="paper-content" style="display: none;">
+      <div class="ui basic button back-to-papers" onclick="showPapersList()">
+        <i class="arrow left icon"></i> Back to Papers
+      </div>
+
+      <div class="project-content-body">
+        {{ page.content }}
+      </div>
+
+      {% if page.pdf %}
+      <div class="project-actions">
+        <a class="ui button" href="{{ site.baseurl }}{{ page.pdf }}" target="_blank">
+          <i class="download icon"></i> Download PDF
+        </a>
+      </div>
+      {% endif %}
+    </div>
+    {% endunless %}
+    {% endfor %}
   </section>
 
   <section id="essays-tab" class="tab-content" style="display: none;">
@@ -311,7 +333,37 @@
     transform: translateX(-3px) !important;
   }
 
-  /* Responsive adjustments for project content */
+  /* Paper content styling - reuse project styles */
+  .paper-content {
+    animation: fadeIn 0.3s ease-in-out;
+    padding: 20px 0;
+    width: 100% !important;
+  }
+
+  .back-to-papers {
+    margin-bottom: 20px !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .back-to-papers:hover {
+    transform: translateX(-3px) !important;
+  }
+
+  /* PDF container styling for papers */
+  .paper-content .pdf-container {
+    margin: 30px 0 !important;
+    text-align: center !important;
+  }
+
+  .paper-content .pdf-container iframe {
+    width: 100% !important;
+    height: 600px !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px var(--shadow-color) !important;
+  }
+
+  /* Responsive adjustments for project and paper content */
   @media (max-width: 768px) {
     .project-detail-container {
       margin: 0 10px !important;
@@ -321,6 +373,10 @@
     .project-content-body {
       padding: 0 10px !important;
       font-size: 1em !important;
+    }
+
+    .paper-content .pdf-container iframe {
+      height: 400px !important;
     }
   }
 </style>
@@ -400,5 +456,48 @@
 
     if (projectsList) projectsList.style.display = 'flex';
     if (projectsHeader) projectsHeader.style.display = 'block';
+  }
+
+  // Paper content display functionality
+  function loadPaper(paperUrl, paperTitle) {
+    // Convert title to slug format for ID matching
+    const paperSlug = paperTitle.toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim();
+
+    const paperContentId = 'paper-' + paperSlug;
+    const paperContent = document.getElementById(paperContentId);
+
+    if (paperContent) {
+      // Hide the papers list
+      const papersList = document.querySelector('#papers-tab .ui.cards');
+      const papersHeader = document.querySelector('#papers-tab h2');
+
+      if (papersList) papersList.style.display = 'none';
+      if (papersHeader) papersHeader.style.display = 'none';
+
+      // Show the individual paper content
+      paperContent.style.display = 'block';
+    } else {
+      // Fallback to navigation if content section not found
+      window.location.href = '{{ site.baseurl }}' + paperUrl;
+    }
+  }
+
+  function showPapersList() {
+    // Hide all paper content sections
+    const paperContents = document.querySelectorAll('.paper-content');
+    paperContents.forEach(content => {
+      content.style.display = 'none';
+    });
+
+    // Show the papers list
+    const papersList = document.querySelector('#papers-tab .ui.cards');
+    const papersHeader = document.querySelector('#papers-tab h2');
+
+    if (papersList) papersList.style.display = 'flex';
+    if (papersHeader) papersHeader.style.display = 'block';
   }
 </script>

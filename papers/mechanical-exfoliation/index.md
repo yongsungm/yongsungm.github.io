@@ -13,7 +13,7 @@ summary: Research on accessible and inexpensive parameter testing platform for a
 ---
 
 <div class="pdf-container">
-  <iframe src="{{ site.baseurl }}/papers/mechanical-exfoliation/Mechanical_Exfoliation.pdf"></iframe>
+  <iframe src="/papers/mechanical-exfoliation/Mechanical_Exfoliation.pdf"></iframe>
 </div>
 
 <div class="ui center aligned basic segment">

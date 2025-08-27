@@ -1,0 +1,25 @@
+<!-- Used by content-papers -->
+
+<div class="card">
+  <div class="content">
+    <span class="header">{{ include.page.title }}</span>
+    <div class="meta">
+      <span class="date">{{ include.page.date | date: "%B %Y" }}</span>
+    </div>
+
+    <div class="description">
+      {{ include.page.summary | default: include.page.excerpt | strip_html | truncatewords: 30 }}
+    </div>
+  </div>
+
+  <div class="extra content">
+    <div class="ui mini labels">
+      {% for label in include.page.labels %}
+        <div class="ui basic label">{{ label }}</div>
+      {% endfor %}
+    </div>
+  </div>
+  
+  <button class="ui bottom attached button"
+    onclick="loadPaper('{{ include.page.url }}', '{{ include.page.title | escape }}')">View Paper</button>
+</div>

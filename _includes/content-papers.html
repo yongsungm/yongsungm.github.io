@@ -1,33 +1,9 @@
 <!-- Dynamic Papers Content -->
-<div class="ui stackable one column grid">
+<div class="ui stackable centered four cards">
   {% assign paper_pages = site.pages | where: "type", "paper" | sort: "date" | reverse %}
   {% for page in paper_pages %}
     {% unless page.draft %}
-    <div class="column">
-      <div class="ui fluid card">
-        <div class="content">
-          <div class="header">{{ page.title }}</div>
-          <div class="meta">{{ page.date | date: "%B %Y" }}</div>
-          <div class="description">
-            {{ page.summary | default: page.excerpt | strip_html | truncatewords: 30 }}
-          </div>
-        </div>
-        <div class="extra content">
-          <div class="ui two buttons">
-            <a href="{{ site.baseurl }}{{ page.permalink }}" class="ui basic blue button">
-              <i class="eye icon"></i>
-              View Paper
-            </a>
-            {% if page.pdf %}
-            <a href="{{ site.baseurl }}{{ page.pdf }}" target="_blank" class="ui basic green button">
-              <i class="download icon"></i>
-              Download PDF
-            </a>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-    </div>
+      {% include paper-card.html page=page %}
     {% endunless %}
   {% endfor %}
 </div>

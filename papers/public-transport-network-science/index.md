@@ -14,7 +14,7 @@ summary: An analysis of how public transportation might be improved using networ
 ---
 
 <div class="pdf-container">
-  <iframe src="{{ site.baseurl }}/papers/public-transport-network-science/Public_Transport.pdf"></iframe>
+  <iframe src="/papers/public-transport-network-science/Public_Transport.pdf"></iframe>
 </div>
 
 <div class="ui center aligned basic segment">
