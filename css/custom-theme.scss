@@ -264,8 +264,6 @@ blockquote {
   transition: all 0.3s ease !important;
 }
 
-
-
 /* Override for individual content pages */
 .ui.text.container {
   background-color: var(--bg-secondary) !important;
@@ -407,5 +405,34 @@ div[class*="bio-"] {
       width: 100% !important;
       max-width: 200px !important;
     }
+  }
+}
+/* 
+Card width fix - prevent expansion when only 1 card per row */
+.ui.stackable.centered.four.cards {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+}
+
+.ui.stackable.centered.four.cards > .card {
+  max-width: 350px !important;
+  min-width: 280px !important;
+  flex: 0 0 auto !important;
+  margin: 0.875em 0.5em !important;
+}
+
+/* Responsive card adjustments */
+@media (max-width: 767px) {
+  .ui.stackable.centered.four.cards > .card {
+    max-width: 320px !important;
+    min-width: 260px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ui.stackable.centered.four.cards > .card {
+    max-width: 300px !important;
+    min-width: 240px !important;
   }
 }
