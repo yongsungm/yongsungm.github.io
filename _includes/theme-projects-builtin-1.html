@@ -1,6 +1,7 @@
-<div style="padding-top: 20px" class="ui container ">
+<div style="padding-top: 20px" class="ui container">
 
-  <div class="ui stackable centered four cards">
+  <!-- Projects List -->
+  <div id="projects-list" class="ui stackable centered four cards">
     {% assign project_pages = site.pages | where: "type", "project" | sort: "date" | reverse %}
     {% for page in project_pages %}
       {% unless page.draft %}
@@ -8,4 +9,90 @@
       {% endunless %}
     {% endfor %}
   </div>
+
+  <!-- Individual Project Content Sections -->
+  {% assign project_pages = site.pages | where: "type", "project" | sort: "date" | reverse %}
+  {% for page in project_pages %}
+    {% unless page.draft %}
+      {% assign project_slug = page.title | downcase | replace: ' ', '-' | replace: '[^a-z0-9\-]', '' %}
+      <div id="project-{{ project_slug }}" class="project-content" style="display: none;">
+        <div class="ui card" style="width: 100%; max-width: none;">
+          <div class="content">
+            <div class="header">{{ page.title }}</div>
+            <div class="meta">{{ page.date }}</div>
+            <div class="description">
+              {{ page.content }}
+            </div>
+          </div>
+          <div class="extra content">
+            <button class="ui button" onclick="showProjectsList()">
+              <i class="arrow left icon"></i>
+              Back to Projects
+            </button>
+            {% if page.projecturl %}
+              <a href="{{ page.projecturl }}" class="ui right floated button" target="_blank">
+                <i class="external link icon"></i>
+                View Project
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endunless %}
+  {% endfor %}
 </div>
+
+<script>
+  // Test function to verify JavaScript is working
+  console.log('Project JavaScript loaded');
+  alert('Project JavaScript loaded - you should see this popup');
+  
+  // Project content display functionality
+  window.loadProject = function(projectUrl, projectTitle) {
+    alert('loadProject called with title: ' + projectTitle);
+    console.log('loadProject called with:', projectUrl, projectTitle);
+    
+    // Convert title to slug format for ID matching
+    const projectSlug = projectTitle.toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim();
+
+    const projectContentId = 'project-' + projectSlug;
+    const projectContent = document.getElementById(projectContentId);
+
+    if (projectContent) {
+      // Hide the projects list
+      const projectsList = document.getElementById('projects-list');
+      if (projectsList) {
+        console.log('Hiding projects list');
+        projectsList.classList.add('content-hidden');
+      }
+
+      // Show the individual project content
+      console.log('Showing project content:', projectContentId);
+      projectContent.classList.add('active');
+    } else {
+      // Debug: log the expected ID if content not found
+      console.log('Project content not found for ID:', projectContentId);
+      // Fallback to navigation if content section not found
+      window.location.href = '{{ site.baseurl }}' + projectUrl;
+    }
+  };
+
+  window.showProjectsList = function() {
+    // Hide all project content sections
+    const projectContents = document.querySelectorAll('.project-content');
+    projectContents.forEach(content => {
+      content.classList.remove('active');
+    });
+
+    // Show the projects list
+    const projectsList = document.getElementById('projects-list');
+    if (projectsList) {
+      console.log('Showing projects list');
+      projectsList.classList.remove('content-hidden');
+    }
+  };
+</script>

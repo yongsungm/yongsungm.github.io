@@ -1,11 +1,88 @@
-<div style="padding-top: 20px" class="ui container ">
+<div style="padding-top: 20px" class="ui container">
 
-  <div class="ui stackable centered four cards">
+  <!-- Essays List -->
+  <div id="essays-list" class="ui stackable centered four cards">
     {% assign essay_pages = site.pages | where: "type", "essay" | sort: "date" | reverse %}
-      {% for page in essay_pages %}
-        {% unless page.draft %}
-          {% include essay-card.html page=page %}
-        {% endunless %}
-      {% endfor %}
+    {% for page in essay_pages %}
+      {% unless page.draft %}
+        {% include essay-card.html page=page %}
+      {% endunless %}
+    {% endfor %}
   </div>
+
+  <!-- Individual Essay Content Sections -->
+  {% assign essay_pages = site.pages | where: "type", "essay" | sort: "date" | reverse %}
+  {% for page in essay_pages %}
+    {% unless page.draft %}
+      {% assign essay_slug = page.title | downcase | replace: ' ', '-' | replace: '[^a-z0-9\-]', '' %}
+      <div id="essay-{{ essay_slug }}" class="essay-content" style="display: none;">
+        <div class="ui card" style="width: 100%; max-width: none;">
+          <div class="content">
+            <div class="header">{{ page.title }}</div>
+            <div class="meta">{{ page.date | date_to_string }}</div>
+            <div class="description">
+              {{ page.content }}
+            </div>
+          </div>
+          <div class="extra content">
+            <button class="ui button" onclick="showEssaysList()">
+              <i class="arrow left icon"></i>
+              Back to Essays
+            </button>
+          </div>
+        </div>
+      </div>
+    {% endunless %}
+  {% endfor %}
 </div>
+
+<script>
+  // Test function to verify JavaScript is working
+  console.log('Essay JavaScript loaded');
+  
+  // Essay content display functionality
+  window.loadEssay = function(essayUrl, essayTitle) {
+    // Convert title to slug format for ID matching
+    const essaySlug = essayTitle.toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim();
+
+    const essayContentId = 'essay-' + essaySlug;
+    const essayContent = document.getElementById(essayContentId);
+
+    if (essayContent) {
+      // Hide the essays list
+      const essaysList = document.getElementById('essays-list');
+      if (essaysList) {
+        console.log('Hiding essays list');
+        essaysList.classList.add('content-hidden');
+      }
+
+      // Show the individual essay content
+      console.log('Showing essay content:', essayContentId);
+      essayContent.classList.add('active');
+    } else {
+      // Debug: log the expected ID if content not found
+      console.log('Essay content not found for ID:', essayContentId);
+      // Fallback to navigation if content section not found
+      window.location.href = '{{ site.baseurl }}' + essayUrl;
+    }
+  };
+
+  window.showEssaysList = function() {
+    // Hide all essay content sections
+    const essayContents = document.querySelectorAll('.essay-content');
+    essayContents.forEach(content => {
+      content.classList.remove('active');
+    });
+
+    // Show the essays list
+    const essaysList = document.getElementById('essays-list');
+    if (essaysList) {
+      console.log('Showing essays list');
+      essaysList.classList.remove('content-hidden');
+    }
+  };
+</script>

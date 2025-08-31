@@ -1,14 +1,19 @@
 ---
 ---
-/* MINIMAL TEST VERSION - TESTING BUTTON FUNCTIONALITY */
 
+/* BACKUP OF FULL CUSTOM THEME - RESTORE IF NEEDED */
 /* Custom Color Palette Theme */
 :root {
   --chinese-violet: #67597a;
+  /* Deep purple */
   --english-violet: #544e61;
+  /* Darker purple */
   --slate-gray: #6e8894;
-  --cambridge-blue: #85baa1;
+  /* Blue-gray */
+  --cambridge-blue: #ba85b1;
+  /* Sage green */
   --honeydew: #ceeddb;
+  /* Light mint green */
 
   /* Light mode variables */
   --bg-primary: #f8f9fa;
@@ -33,6 +38,27 @@
 body {
   background-color: var(--bg-primary) !important;
   color: var(--text-primary) !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+/* Header and navigation */
+.ui.menu {
+  background-color: var(--english-violet) !important;
+  border: none !important;
+}
+
+.ui.menu .item {
+  color: var(--honeydew) !important;
+}
+
+.ui.menu .item:hover {
+  background-color: var(--chinese-violet) !important;
+  color: var(--honeydew) !important;
+}
+
+.ui.menu .active.item {
+  background-color: var(--cambridge-blue) !important;
+  color: var(--english-violet) !important;
 }
 
 /* Cards */
@@ -175,8 +201,6 @@ a:hover {
   background-color: var(--bg-secondary) !important;
   color: var(--text-primary) !important;
 }
-
-
 
 /* Code blocks */
 pre {
@@ -374,42 +398,52 @@ div[class*="bio-"] {
   }
 }
 
+/* 
+Card width fix - prevent expansion when only 1 card per row */
+.ui.stackable.centered.four.cards {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+}
+
 .ui.stackable.centered.four.cards>.card {
   max-width: 350px !important;
   min-width: 280px !important;
   flex: 0 0 auto !important;
-  margin: 0 auto !important;
+  margin: 0.875em 0.5em !important;
 }
 
-// /* Responsive card adjustments */
-// @media (max-width: 767px) {
-//   .ui.stackable.centered.four.cards>.card {
-//     max-width: 320px !important;
-//     min-width: 260px !important;
-//   }
-// }
+/* Responsive card adjustments */
+@media (max-width: 767px) {
+  .ui.stackable.centered.four.cards>.card {
+    max-width: 320px !important;
+    min-width: 260px !important;
+  }
+}
 
-// @media (max-width: 480px) {
-//   .ui.stackable.centered.four.cards>.card {
-//     max-width: 300px !important;
-//     min-width: 240px !important;
-//   }
-// }
+@media (max-width: 480px) {
+  .ui.stackable.centered.four.cards>.card {
+    max-width: 300px !important;
+    min-width: 240px !important;
+  }
+}
 
-// /* Project and Essay content display fixes */
-// .project-content,
-// .essay-content {
-//   display: none !important;
-// }
+/* Project and Essay content display fixes */
+.project-content,
+.essay-content {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
 
-// .project-content.active,
-// .essay-content.active {
-//   display: block !important;
-//   visibility: visible !important;
-//   opacity: 1 !important;
-// }
+.project-content.active,
+.essay-content.active {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
 
-// /* Hide cards list when viewing individual content */
-// .content-hidden {
-//   display: none !important;
-// }
+/* Hide cards list when viewing individual content */
+.content-hidden {
+  display: none !important;
+}

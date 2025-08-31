@@ -3,6 +3,7 @@ layout: project
 type: project
 image: projects/rubiks-cube/images/cube.jpg
 title: Rubik's Cube Animation
+draft: true
 permalink: projects/rubiks-cube/
 # All dates must be YYYY-MM-DD format!
 date: 2021-01-28
