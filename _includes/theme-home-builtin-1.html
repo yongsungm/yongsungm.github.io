@@ -321,7 +321,8 @@
   }
 
   /* Override Semantic UI responsive card behavior */
-  .tab-content .ui.cards {
+  /* .tab-content .ui.cards {
+    display: flex !important;
     justify-content: center !important;
     flex-wrap: wrap !important;
   }
@@ -331,7 +332,7 @@
     min-width: 280px !important;
     max-width: 280px !important;
     margin: 0.875em 0.5em !important;
-  }
+  } */
 
   .tab-content .ui.card .header {
     color: var(--text-primary) !important;
@@ -592,18 +593,19 @@
     const projectContent = document.getElementById(projectContentId);
 
     if (projectContent) {
-      // Hide the projects list
+      // Hide the projects list with !important to override mobile CSS
       const projectsList = document.querySelector('#projects-tab .ui.cards');
       const projectsHeader = document.querySelector('#projects-tab h2');
 
-      if (projectsList) projectsList.style.display = 'none';
-      if (projectsHeader) projectsHeader.style.display = 'none';
+      if (projectsList) {
+        projectsList.style.setProperty('display', 'none', 'important');
+      }
+      if (projectsHeader) {
+        projectsHeader.style.setProperty('display', 'none', 'important');
+      }
 
       // Show the individual project content
       projectContent.style.display = 'block';
-    } else {
-      // Fallback to navigation if content section not found
-      window.location.href = '{{ site.baseurl }}' + projectUrl;
     }
   }
 
@@ -618,8 +620,12 @@
     const projectsList = document.querySelector('#projects-tab .ui.cards');
     const projectsHeader = document.querySelector('#projects-tab h2');
 
-    if (projectsList) projectsList.style.display = 'flex';
-    if (projectsHeader) projectsHeader.style.display = 'block';
+    if (projectsList) {
+      projectsList.style.setProperty('display', 'flex', 'important');
+    }
+    if (projectsHeader) {
+      projectsHeader.style.setProperty('display', 'block', 'important');
+    }
   }
 
   // Paper content display functionality
@@ -639,8 +645,8 @@
       const papersList = document.querySelector('#papers-tab .ui.cards');
       const papersHeader = document.querySelector('#papers-tab h2');
 
-      if (papersList) papersList.style.display = 'none';
-      if (papersHeader) papersHeader.style.display = 'none';
+      if (papersList) papersList.style.setProperty('display', 'none', 'important');
+      if (papersHeader) papersHeader.style.setProperty('display', 'none', 'important');
 
       // Show the individual paper content
       paperContent.style.display = 'block';
@@ -661,8 +667,8 @@
     const papersList = document.querySelector('#papers-tab .ui.cards');
     const papersHeader = document.querySelector('#papers-tab h2');
 
-    if (papersList) papersList.style.display = 'flex';
-    if (papersHeader) papersHeader.style.display = 'block';
+    if (papersList) papersList.style.setProperty('display', 'flex', 'important');
+    if (papersHeader) papersHeader.style.setProperty('display', 'block', 'important');
   }
 
   // Essay content display functionality
@@ -682,8 +688,8 @@
       const essaysList = document.querySelector('#essays-tab .ui.cards');
       const essaysHeader = document.querySelector('#essays-tab h2');
 
-      if (essaysList) essaysList.style.display = 'none';
-      if (essaysHeader) essaysHeader.style.display = 'none';
+      if (essaysList) essaysList.style.setProperty('display', 'none', 'important');
+      if (essaysHeader) essaysHeader.style.setProperty('display', 'none', 'important');
 
       // Show the individual essay content
       essayContent.style.display = 'block';
@@ -704,7 +710,7 @@
     const essaysList = document.querySelector('#essays-tab .ui.cards');
     const essaysHeader = document.querySelector('#essays-tab h2');
 
-    if (essaysList) essaysList.style.display = 'flex';
-    if (essaysHeader) essaysHeader.style.display = 'block';
+    if (essaysList) essaysList.style.setProperty('display', 'flex', 'important');
+    if (essaysHeader) essaysHeader.style.setProperty('display', 'block', 'important');
   }
 </script>
