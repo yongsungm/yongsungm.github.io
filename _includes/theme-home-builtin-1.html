@@ -24,7 +24,7 @@
           <div class="meta">
             <span class="date">{{ site.data.bio.basics.label }}</span>
           </div>
-          <div class="left aligned description">
+          <div class="center aligned content">
             {{ site.data.bio.basics.summary }}
           </div>
         </div>
@@ -41,8 +41,8 @@
           {% include home-network-links.html %}
         </div>
         <div class="center aligned content homepage-buttons-container">
-          <button class="ui basic button tab-button" data-tab="projects">Projects ({{ num_projects }})</button>
           <button class="ui basic button tab-button" data-tab="papers">Papers ({{ num_papers }})</button>
+          <button class="ui basic button tab-button" data-tab="projects">Projects ({{ num_projects }})</button>
           <button class="ui basic button tab-button" data-tab="essays">Essays ({{ num_essays }})</button>
           <button class="ui basic button tab-button" data-tab="bio">{{ site.bio-page-label }}</button>
           <button class="ui basic button dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
